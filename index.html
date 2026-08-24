@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaatham | Explore India. Experience More.</title>
+  <meta name="description" content="Kaatham crafts small-group journeys across India — from the high passes of Spiti to the backwaters of Kerala. Travel far. Feel more.">
+
+  <!-- Open Graph placeholders — update with real values before launch -->
+  <meta property="og:title" content="Kaatham | Explore India. Experience More.">
+  <meta property="og:description" content="Journeys across India, crafted for the moments you'll remember forever.">
+  <meta property="og:image" content="kaatham-logo-white.png">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="kaatham-logo-white.png">
+
+  <!-- Fonts: Fraunces (display serif, echoes the hand-set feel of the Spiti poster) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ LOADER ============ -->
+  <div id="loader" aria-hidden="true">
+    <img src="kaatham-logo-white.png" alt="Kaatham Logo" class="loader-logo">
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#home" class="brand" aria-label="Kaatham home">
+        <img src="kaatham-logo-white.png" alt="Kaatham logo" class="brand-logo">
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#destinations" class="nav-link">Destinations</a>
+        <a href="#packages" class="nav-link">Trips</a>
+        <a href="#experiences" class="nav-link">Experiences</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#enquiry" class="btn btn-small btn-accent nav-cta">Plan a Trip</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content container">
+      <img src="kaatham-logo-white.png" alt="Kaatham" class="hero-logo reveal-el">
+      <h1 class="hero-title reveal-el">Travel Far.<br><span>Feel More.</span></h1>
+      <p class="hero-sub reveal-el">Journeys across India, crafted for the moments you'll remember forever.</p>
+      <div class="hero-actions reveal-el">
+        <a href="#packages" class="btn btn-accent">Explore Trips</a>
+        <a href="#enquiry" class="btn btn-outline">Plan Your Journey</a>
+      </div>
+    </div>
+
+    <a href="#destinations" class="scroll-indicator" aria-label="Scroll down">
+      <span></span>
+    </a> 
+  </section>
+
+  <!-- ============ DESTINATIONS ============ -->
+  <section class="section destinations" id="destinations">
+    <div class="container">
+      <p class="eyebrow reveal-el">Where to next</p>
+      <h2 class="section-title reveal-el">India, Beyond the Ordinary.</h2>
+      <p class="section-lead reveal-el">Eleven regions. Countless roads not yet taken. Pick a direction.</p>
+
+      <div class="dest-grid reveal-el">
+        <a class="dest-card dest-card--lg" href="trekking.html" style="--img:url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80')">
+          <span class="dest-name">Trek With Us</span>
+          <span class="dest-tag">Across the Himayalas</span>
+        </a>
+        <a class="dest-card" href="#packages" style="--img:url('https://images.unsplash.com/photo-1711359940524-ed5e0ad9b89b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+          <span class="dest-name">Kullu - Manali</span>
+          <span class="dest-tag">Himachal Pradesh</span>
+        </a>
+        <a class="dest-card" href="#packages" style="--img:url('https://images.unsplash.com/photo-1657894736581-ccc35d62d9e2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+          <span class="dest-name">Shimla</span>
+          <span class="dest-tag">Himachal Pradesh</span>
+        </a>
+        <a class="dest-card" href="#packages" style="--img:url('https://images.unsplash.com/photo-1715457573748-8e8a70b2c1be?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+          <span class="dest-name">Kashmir</span>
+          <span class="dest-tag">J&amp;K</span>
+        </a>
+        <a class="dest-card" href="#packages" style="--img:url('https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+          <span class="dest-name">Ladakh</span>
+          <span class="dest-tag">Union Territory</span>
+        </a>
+        <a class="dest-card" href="#packages" style="--img:url('https://images.unsplash.com/photo-1609670289875-590e8ec05c88?q=80&w=734&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+          <span class="dest-name">Delhi</span>
+          <span class="dest-tag">Monuments &amp; Markets</span>
+        </a>
+        <a class="dest-card" href="#packages" style="--img:url('https://plus.unsplash.com/premium_photo-1697730324062-c012bc98eb13?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+          <span class="dest-name">Punjab</span>
+          <span class="dest-tag">Heritage</span>
+        </a>
+        <a class="dest-card" href="#packages" style="--img:url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=80')">
+          <span class="dest-name">Kerala</span>
+          <span class="dest-tag">Backwaters</span>
+        </a>
+        <a class="dest-card" href="#packages" style="--img:url('https://images.unsplash.com/photo-1496566084516-c5b96fcbd5c8?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+          <span class="dest-name">Goa</span>
+          <span class="dest-tag">Coastal</span>
+        </a>
+        <a class="dest-card" href="#packages" style="--img:url('https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=80')">
+          <span class="dest-name">Rajasthan</span>
+          <span class="dest-tag">Desert &amp; Forts</span>
+        </a>
+        <a class="dest-card" href="#packages" style="--img:url('https://images.unsplash.com/photo-1718383537411-6f9e727ae0bb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+          <span class="dest-name">Uttarakhand</span>
+          <span class="dest-tag">Garhwal Himalaya</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED TRIP — SPITI CIRCUIT ============ -->
+  <section class="section featured" id="spiti">
+    <div class="container featured-grid">
+      <!-- Real Kaatham promo poster. To swap: replace this file at assets/images/trips/spiti-circuit-poster.jpg -->
+      <div class="featured-media reveal-el" style="--img:url('assets/images/trips/spiti-circuit-poster.jpg')">
+        <span class="featured-badge">Flagship Journey</span>
+      </div>
+
+      <div class="featured-copy reveal-el">
+        <p class="eyebrow">Featured trip</p>
+        <h2 class="featured-title" id="featured-title">Spiti Circuit</h2>
+        <p class="featured-meta" id="featured-meta">12 Days · 11 Nights &nbsp;·&nbsp; Kerala to Kerala</p>
+
+        <div class="route-line" id="featured-route-line">
+        </div>
+
+        <div class="featured-facts">
+        <div>
+        <strong id="featured-price">₹21,000</strong>
+        <span>per person</span>
+        </div>
+
+  <div>
+    <strong id="featured-departure">Sep 21 – Oct 02</strong>
+    <span>next departure</span>
+  </div>
+</div>
+
+        <p class="featured-text" id="featured-description">Cross five mountain passes into the cold desert of Spiti — monasteries older than most nations, villages at 15,000 feet, and a lake that turns the sky inside out at Chandratal. Small group, one trip leader, zero guesswork.</p>
+
+        <div class="hero-actions">
+          <button class="btn btn-outline-dark" id="viewJourneyBtn" aria-haspopup="dialog" aria-controls="tripModal">View Journey</button>
+          <a href="#enquiry" class="btn btn-accent" id="featured-book-btn">Book This Trip</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRIP DETAILS MODAL ============ -->
+  <div class="modal" id="tripModal" role="dialog" aria-modal="true" aria-labelledby="tripModalTitle" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+      <button class="modal-close" data-close-modal aria-label="Close journey details">&times;</button>
+      <p class="eyebrow" id="modal-trip-title">Spiti Circuit</p>
+      <h3 id="tripModalTitle">12 Days · 11 Nights</h3>
+
+      <div class="modal-grid">
+        <div>
+          <h4>Route</h4>
+          <p id="modal-route">Shimla → Sangla → Chitkul → Kalpa → Tabo → Nako → Kaza → Hikkim → Komic → Chandratal Lake → Manali</p>
+
+          <h4>Highlights</h4>
+          <ul id="modal-highlights">
+            <li>Key Monastery &amp; the villages of Hikkim and Komic — the world's highest motorable post office</li>
+            <li>Chandratal Lake camping under an open sky</li>
+            <li>Crossing Kunzum and Rohtang passes</li>
+            <li>Homestays in Kalpa and Tabo</li>
+          </ul>
+
+          <h4>Departure</h4>
+          <p id="modal-departure">Sep 21 – Oct 02 &nbsp;·&nbsp; Kerala to Kerala &nbsp;·&nbsp; ₹21,000 per head</p>
+        </div>
+        <div>
+          <h4>Inclusions</h4>
+          <ul id="model-inclusions">
+            <li>Stay: hotels, homestays &amp; camping as per itinerary</li>
+            <li>All meals during the trip</li>
+            <li>Travel by tempo traveller / SUV as needed</li>
+            <li>Trip leader &amp; local guide support</li>
+            <li>Permits for restricted areas</li>
+          </ul>
+          <h4>Exclusions</h4>
+          <ul id="modal-exclusions">
+            <li>Personal expenses &amp; shopping</li>
+            <li>Travel insurance</li>
+            <li>Anything not mentioned under inclusions</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="#enquiry" class="btn btn-accent" id="modal-enquire-btn" data-close-modal>Enquire About This Trip</a>
+    </div>
+  </div>
+
+  <!-- ============ POPULAR PACKAGES ============ -->
+  <section class="section packages" id="packages">
+    <div class="container">
+      <p class="eyebrow reveal-el">Handpicked</p>
+      <h2 class="section-title reveal-el">Popular Packages.</h2>
+      <p class="section-lead reveal-el">Every trip is small-group, trip-leader led, and built around real places — not photo stops.</p>
+
+      <div class="pkg-grid" id="package-grid">
+      </div>
+    </div>
+  </section>
+
+<!-- ============ BROCHURES ============ -->
+<section class="section brochures" id="brochures">
+  <div class="container">
+    <p class="eyebrow reveal-el">Explore</p>
+    <h2 class="section-title reveal-el">Travel Brochures.</h2>
+    <p class="section-lead reveal-el">
+      Explore our latest brochures and discover your next journey with Kaatham.
+    </p>
+
+    <div class="brochure-grid" id="brochure-grid">
+      <!-- Brochures will be loaded here automatically -->
+    </div>
+  </div>
+</section>
+
+  <!-- ============ CINEMATIC SECTION ============ -->
+  <section class="cinematic" style="--img:url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1800&q=80')">
+    <div class="container cinematic-inner reveal-el">
+      <p class="cinematic-line">Some journeys change the way you see the world.</p>
+      <p class="cinematic-line cinematic-line--accent">Some mountains change the way you see yourself.</p>
+      <a href="#destinations" class="btn btn-outline">Explore the Himalayas</a>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCES ============ -->
+  <section class="section experiences" id="experiences">
+    <div class="container">
+      <p class="eyebrow reveal-el">Choose your pace</p>
+      <h2 class="section-title reveal-el">Experiences.</h2>
+
+      <div class="exp-grid reveal-el">
+        <div class="exp-card"><span class="exp-icon">⛰</span><h3>Mountain Escapes</h3></div>
+        <div class="exp-card"><span class="exp-icon">🚗</span><h3>Road Trips</h3></div>
+        <div class="exp-card"><span class="exp-icon">🥾</span><h3>Trekking</h3></div>
+        <div class="exp-card"><span class="exp-icon">⛺</span><h3>Camping</h3></div>
+        <div class="exp-card"><span class="exp-icon">🌿</span><h3>Nature</h3></div>
+        <div class="exp-card"><span class="exp-icon">🍛</span><h3>Culture &amp; Food</h3></div>
+        <div class="exp-card"><span class="exp-icon">📷</span><h3>Photography</h3></div>
+        <div class="exp-card"><span class="exp-icon">🧗</span><h3>Adventure</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY KAATHAM ============ -->
+  <section class="section why">
+    <div class="container">
+      <p class="eyebrow reveal-el">Why travel with us</p>
+      <h2 class="section-title reveal-el">Why Kaatham?</h2>
+
+      <div class="why-grid reveal-el">
+        <div class="why-card">
+          <h3>Curated Journeys</h3>
+          <p>Every route is walked and vetted by our own team before it's sold.</p>
+        </div>
+        <div class="why-card">
+          <h3>Local Experiences</h3>
+          <p>Homestays, local guides and food that isn't on a tourist menu.</p>
+        </div>
+        <div class="why-card">
+          <h3>Experienced Trip Leaders</h3>
+          <p>People who've done the route a dozen times, not a script.</p>
+        </div>
+        <div class="why-card">
+          <h3>Transparent Pricing</h3>
+          <p>What you see is what you pay — no hidden add-ons at checkout.</p>
+        </div>
+        <div class="why-card">
+          <h3>Small Group Adventures</h3>
+          <p>Capped group sizes so the trip still feels like yours.</p>
+        </div>
+        <div class="why-card">
+          <h3>24/7 Support</h3>
+          <p>On the road or planning from home, someone always picks up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section how">
+    <div class="container">
+      <p class="eyebrow reveal-el">The process</p>
+      <h2 class="section-title reveal-el">How It Works.</h2>
+
+      <ol class="timeline reveal-el">
+        <li><span class="tl-num">01</span><div><h3>Choose Your Journey</h3><p>Browse trips or tell us what you're craving.</p></div></li>
+        <li><span class="tl-num">02</span><div><h3>Enquire With Us</h3><p>Send your dates and group size — we reply fast.</p></div></li>
+        <li><span class="tl-num">03</span><div><h3>Confirm Your Trip</h3><p>Lock your seat with a simple booking process.</p></div></li>
+        <li><span class="tl-num">04</span><div><h3>Pack Your Bags</h3><p>We send a full checklist and briefing before you leave.</p></div></li>
+        <li><span class="tl-num">05</span><div><h3>Live The Journey</h3><p>Show up. We'll handle the rest.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section about" id="about">
+    <div class="container about-grid">
+      <div class="about-media reveal-el" style="--img:url('https://images.unsplash.com/photo-1626016671056-c0b3f6b7f3d0?auto=format&fit=crop&w=1000&q=80')"></div>
+      <div class="about-copy reveal-el">
+        <p class="eyebrow">About Kaatham</p>
+        <h2 class="section-title">We Don't Just Plan Trips.<br>We Create Stories.</h2>
+        <p>Kaatham started with a simple frustration — travel packages that showed you a monument and rushed you to the next one. We build differently: fewer stops, longer stays, and routes chosen by people who've actually walked them.</p>
+        <p>Every Kaatham trip is designed to leave you with a story you'll actually tell — not just a photo you'll scroll past.</p>
+        <a href="#enquiry" class="btn btn-dark">Talk to Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INDIA MAP ============ -->
+  <section class="section india-map">
+    <div class="container">
+      <p class="eyebrow reveal-el">Our footprint</p>
+      <h2 class="section-title reveal-el">Where We Take You.</h2>
+
+      <div class="map-wrap reveal-el">
+        <svg viewBox="0 0 400 460" class="india-svg" aria-hidden="true">
+          <path d="M180 20 L220 15 L245 40 L260 35 L275 55 L270 80 L290 95 L300 130 L285 150 L300 175 L295 210 L310 230 L300 270 L280 300 L285 330 L260 360 L245 400 L225 430 L210 420 L200 440 L185 410 L170 420 L165 390 L140 370 L150 340 L125 320 L130 290 L105 270 L115 240 L95 210 L110 180 L90 150 L105 120 L95 90 L120 70 L115 45 L145 35 L160 45 Z" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/>
+        </svg>
+
+        <button class="map-pin" style="top:12%; left:47%" data-place="Kashmir" data-info="Alpine lakes and the Great Lakes trek.">Kashmir</button>
+        <button class="map-pin" style="top:20%; left:42%" data-place="Ladakh" data-info="Passes, monasteries and the road to Pangong.">Ladakh</button>
+        <button class="map-pin" style="top:27%; left:48%" data-place="Himachal &amp; Spiti" data-info="Our flagship Spiti Circuit runs through here.">Himachal</button>
+        <button class="map-pin" style="top:33%; left:40%" data-place="Uttarakhand" data-info="Garhwal Himalaya treks and river valleys.">Uttarakhand</button>
+        <button class="map-pin" style="top:45%; left:22%" data-place="Rajasthan" data-info="Forts, deserts and the Thar's golden light.">Rajasthan</button>
+        <button class="map-pin" style="top:70%; left:20%" data-place="Goa" data-info="Coastal calm and old Portuguese lanes.">Goa</button>
+        <button class="map-pin" style="top:90%; left:28%" data-place="Kerala" data-info="Backwaters, tea hills and where most Kaatham trips begin.">Kerala</button>
+
+        <div class="map-tooltip" id="mapTooltip" hidden>
+          <strong id="mapTooltipTitle"></strong>
+          <p id="mapTooltipText"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOCIAL PROOF ============ -->
+  <section class="section stats">
+    <div class="container stats-grid">
+      <div class="stat reveal-el"><span class="stat-num" data-count="20">0</span><span class="stat-plus">+</span><span class="stat-label">Destinations</span></div>
+      <div class="stat reveal-el"><span class="stat-num" data-count="1000">0</span><span class="stat-plus">+</span><span class="stat-label">Travellers</span></div>
+      <div class="stat reveal-el"><span class="stat-num" data-count="50">0</span><span class="stat-plus">+</span><span class="stat-label">Journeys</span></div>
+      <div class="stat reveal-el"><span class="stat-num" data-count="5">0</span><span class="stat-plus">★</span><span class="stat-label">Experiences</span></div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section testimonials">
+    <div class="container">
+      <p class="eyebrow reveal-el">In their words</p>
+      <h2 class="section-title reveal-el">Stories From The Road.</h2>
+
+      <div class="testi-slider reveal-el">
+        <div class="testi-track" id="testiTrack">
+          <blockquote class="testi-card">
+            <p>Our trip leader knew every homestay owner by name. The Spiti Circuit didn't feel like a package — it felt like being shown around by a friend.</p>
+            <footer>Aravind M. <span>— Spiti Circuit, 2025</span></footer>
+          </blockquote>
+          <blockquote class="testi-card">
+            <p>Small group, honest pricing, zero surprises. We were eight strangers on day one and a proper group by Chandratal.</p>
+            <footer>Fathima R. <span>— Ladakh Expedition, 2025</span></footer>
+          </blockquote>
+          <blockquote class="testi-card">
+            <p>Kaatham replied within the hour, every time. That alone made planning a mountain trip from Kerala feel effortless.</p>
+            <footer>Nikhil S. <span>— Manali Getaway, 2025</span></footer>
+          </blockquote>
+        </div>
+        <div class="testi-dots" id="testiDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRAVELLERS' EXPERIENCES (masonry gallery) ============
+       To add a new photo: drop the image in assets/images/experiences/,
+       then copy one <figure class="gallery-item"> block below and update
+       its image src and data-* attributes. The lightbox viewer reads
+       those data-* attributes automatically — no other code changes needed. -->
+  <section class="section experiences-gallery" id="travellers">
+    <div class="container">
+      <p class="eyebrow reveal-el">From our travellers</p>
+      <h2 class="section-title reveal-el">Our Travellers' Experiences.</h2>
+      <p class="section-lead reveal-el">The best memories are the ones you bring home.</p>
+
+      <div class="masonry reveal-el" id="masonryGallery">
+
+        <figure class="gallery-item"
+          data-location="Himachal Pradesh"
+          data-review="Made a friend on day one who never left our side for the rest of the trek. That's the kind of trip this is."
+          data-name="Aravind M.">
+          <img src="assets/images/experiences/exp-dog-himachal.jpg" alt="Traveller greeting a dog on a green hillside in Himachal Pradesh" loading="lazy">
+          <figcaption>
+            <span class="gi-loc">📍 Himachal Pradesh</span>
+            <span class="gi-review">"Made a friend on day one who never left our side."</span>
+            <span class="gi-name">👤 Aravind M.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--tall"
+          data-location="Tosh, Himachal Pradesh"
+          data-review="Crossing that little wooden bridge with the dogs following us is still the first thing I show people from the trip."
+          data-name="Fathima R.">
+          <img src="assets/images/experiences/exp-stream-tosh.jpg" alt="Traveller crossing a wooden plank over a stream with two dogs in Tosh, Himachal Pradesh" loading="lazy">
+          <figcaption>
+            <span class="gi-loc">📍 Tosh, Himachal Pradesh</span>
+            <span class="gi-review">"Still the first thing I show people from the trip."</span>
+            <span class="gi-name">👤 Fathima R.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item"
+          data-location="Tosh, Himachal Pradesh"
+          data-review="Walked straight into a field of sheep with the whole valley open in front of us. Didn't expect a moment like that on the itinerary."
+          data-name="Nikhil S.">
+          <img src="assets/images/experiences/exp-sheep-tosh.jpg" alt="Traveller walking through a grazing field of sheep in Tosh, Himachal Pradesh" loading="lazy">
+          <figcaption>
+            <span class="gi-loc">📍 Tosh, Himachal Pradesh</span>
+            <span class="gi-review">"Didn't expect a moment like that on the itinerary."</span>
+            <span class="gi-name">👤 Nikhil S.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--tall"
+          data-location="Tosh, Himachal Pradesh"
+          data-review="Our trip leader stopped the group just for this view. No rush, no schedule — just five quiet minutes looking at the mountains."
+          data-name="Traveller, Kaatham Group">
+          <img src="assets/images/experiences/exp-mountain-tosh.jpg" alt="Snow-capped mountain view through pine trees in Tosh, Himachal Pradesh" loading="lazy">
+          <figcaption>
+            <span class="gi-loc">📍 Tosh, Himachal Pradesh</span>
+            <span class="gi-review">"No rush, no schedule — just five quiet minutes."</span>
+            <span class="gi-name">👤 Traveller, Kaatham Group</span>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIGHTBOX / FULL-SCREEN IMAGE VIEWER ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Traveller photo viewer" hidden>
+    <div class="lightbox-backdrop" data-close-lightbox></div>
+    <button class="lightbox-close" data-close-lightbox aria-label="Close photo viewer">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+
+    <figure class="lightbox-figure">
+      <img src="" alt="" id="lightboxImg">
+      <figcaption>
+        <span class="gi-loc" id="lightboxLoc"></span>
+        <span class="gi-review" id="lightboxReview"></span>
+        <span class="gi-name" id="lightboxName"></span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- ============ MALAYALAM SECTION ============ -->
+  <section class="section malayalam">
+    <div class="container malayalam-inner reveal-el">
+      <p class="eyebrow">കാഥം</p>
+      <p class="mal-text">
+        യാത്രകൾ നമ്മെ പുതിയ സ്ഥലങ്ങളിലേക്ക് മാത്രമല്ല,<br>
+        പുതിയ അനുഭവങ്ങളിലേക്കും കൊണ്ടുപോകുന്നു.
+      </p>
+      <p class="mal-sub">ഓരോ യാത്രയും ഒരു കഥയാണ് — ഞങ്ങൾ നിങ്ങൾക്കൊപ്പം അത് എഴുതുന്നു.</p>
+      <a href="#enquiry" class="btn btn-outline-dark">നിങ്ങളുടെ യാത്ര ആസൂത്രണം ചെയ്യൂ</a>
+    </div>
+  </section>
+
+  <!-- ============ INSTAGRAM ============ -->
+  <section class="section instagram">
+    <div class="container">
+      <p class="eyebrow reveal-el">@kaatham</p>
+      <h2 class="section-title reveal-el">Follow The Journey.</h2>
+
+      <div class="insta-grid reveal-el">
+        <div class="insta-tile" style="--img:url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=500&q=80')"></div>
+        <div class="insta-tile" style="--img:url('https://images.unsplash.com/photo-1589793907316-f94025b46850?auto=format&fit=crop&w=500&q=80')"></div>
+        <div class="insta-tile" style="--img:url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=500&q=80')"></div>
+        <div class="insta-tile" style="--img:url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f9?auto=format&fit=crop&w=500&q=80')"></div>
+        <div class="insta-tile" style="--img:url('https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=500&q=80')"></div>
+        <div class="insta-tile" style="--img:url('https://images.unsplash.com/photo-1626016730718-2e6c95c86e0a?auto=format&fit=crop&w=500&q=80')"></div>
+      </div>
+      <a href="https://instagram.com/kaatham" target="_blank" rel="noopener" class="btn btn-dark">Follow Our Adventures</a>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CONVERSION ============ -->
+  <section class="final-cta" style="--img:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1800&q=80')">
+    <div class="container reveal-el">
+      <h2>Your Next Story Starts Here.</h2>
+      <p>The mountains are calling. The road is waiting.</p>
+      <div class="hero-actions">
+        <a href="#packages" class="btn btn-accent">Explore Trips</a>
+        <a href="#enquiry" class="btn btn-outline">Talk to Kaatham</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENQUIRY FORM ============ -->
+  <section class="section enquiry" id="enquiry">
+    <div class="container enquiry-grid">
+      <div class="enquiry-copy reveal-el">
+        <p class="eyebrow">Let's plan it</p>
+        <h2 class="section-title">Plan Your Journey.</h2>
+        <p>Tell us where and when — we'll take it from there. Most enquiries get a reply within a few hours.</p>
+        <div class="contact-block">
+          <p><strong>Call / WhatsApp</strong><br>+91 89434 98591</p>
+          <p><strong>Email</strong><br>hello@kaatham.in</p>
+        </div>
+      </div>
+
+      <form class="enquiry-form reveal-el" id="enquiryForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <span class="field-error">Please enter your name.</span>
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+            <span class="field-error">Please enter a valid phone number.</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <span class="field-error">Please enter a valid email.</span>
+          </div>
+          <div class="field">
+            <label for="destination">Destination</label>
+            <select id="destination" name="destination" required>
+              <option value="" disabled selected>Select a trip</option>
+              <option>Spiti Circuit</option>
+              <option>Manali Getaway</option>
+              <option>Shimla Trails</option>
+              <option>Kashmir Great Lakes</option>
+              <option>Ladakh Expedition</option>
+              <option>Meghalaya Roots</option>
+              <option>Rajasthan Royale</option>
+              <option>Hampta Pass &amp; Chandratal</option>
+              <option>Not sure yet</option>
+            </select>
+            <span class="field-error">Please select a destination.</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="travellers">Number of Travellers</label>
+            <input type="number" id="travellers" name="travellers" min="1" required>
+            <span class="field-error">Please enter number of travellers.</span>
+          </div>
+          <div class="field">
+            <label for="date">Preferred Travel Date</label>
+            <input type="date" id="date" name="date" required>
+            <span class="field-error">Please choose a date.</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Anything specific we should know?"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-accent btn-full">Send Enquiry</button>
+
+        <div class="form-success" id="formSuccess" hidden>
+          <strong>Thanks — that's in!</strong> A Kaatham trip planner will reach out shortly.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="kaatham-logo-white.png" alt="Kaatham" class="footer-logo">
+        <p>Small-group journeys across India, built by people who've walked the routes themselves.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#home">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#packages">Trips</a>
+        <a href="#about">About</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Destinations</h4>
+        <a href="#packages">Spiti</a>
+        <a href="#packages">Ladakh</a>
+        <a href="#packages">Kerala</a>
+        <a href="#packages">Rajasthan</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@kaatham.in">hello@kaatham.in</a>
+        <a href="https://wa.me/918943498591" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/kaatha.m?igsh=MWczMHdkbDExenBmdA==&igsi=MWczMHdkbDExenBmdA==" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> Kaatham. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING WHATSAPP BUTTON ============ -->
+  <!-- Replace 918943498591 with the client's real WhatsApp number (country code + number, no + or spaces) -->
+  <a href="https://wa.me/918943498591?text=Hi%20Kaatham%2C%20I%27m%20interested%20in%20one%20of%20your%20trips.%20Could%20you%20share%20more%20details%3F"
+     class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat with Kaatham on WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.66 15L2 22l5.18-1.31A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.09-1.12l-.29-.17-3.07.78.82-2.98-.19-.31A8 8 0 1 1 12 20Zm4.38-5.93c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.33.98 2.49c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+  </a>
+
+
+  <!--FLOATING INSTAGRAM BUTTON-->
+
+  <a href="https://www.instagram.com/kaatha.m?igsh=MWczMHdkbDExenBmdA==&igsi=MWczMHdkbDExenBmdA=="
+     class="instagram-float" target="_blank" rel="noopener" aria-label="Instagram">
+     <svg
+    viewBox="0 0 100 100"
+    width="45"
+    height="45"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+>
+    <defs>
+        <linearGradient id="instagramGradient"
+                        x1="0%" y1="100%"
+                        x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FFD600"/>
+            <stop offset="25%" stop-color="#FF7A00"/>
+            <stop offset="50%" stop-color="#FF0069"/>
+            <stop offset="75%" stop-color="#D300C5"/>
+            <stop offset="100%" stop-color="#7638FA"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Instagram gradient glyph -->
+    <rect
+        x="5"
+        y="5"
+        width="90"
+        height="90"
+        rx="25"
+        fill="url(#instagramGradient)"
+    />
+
+    <!-- Camera -->
+    <rect
+        x="27"
+        y="27"
+        width="46"
+        height="46"
+        rx="14"
+        fill="none"
+        stroke="white"
+        stroke-width="7"
+    />
+
+    <!-- Lens -->
+    <circle
+        cx="50"
+        cy="50"
+        r="11"
+        fill="none"
+        stroke="white"
+        stroke-width="7"
+    />
+
+    <!-- Small dot -->
+    <circle
+        cx="68"
+        cy="32"
+        r="4"
+        fill="white"
+    />
+</svg>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>

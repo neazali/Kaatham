@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RLS Insert Test</title>
+</head>
+<body>
+
+<h2>Minimal RLS Insert Test</h2>
+
+<div>
+  <input type="email" id="email" placeholder="email" value="niyasalika@gmail.com"><br>
+  <input type="password" id="password" placeholder="password"><br>
+  <button id="loginBtn">Login</button>
+  <button id="insertBtn">Insert Test Package</button>
+  <button id="checkBtn">Check Session</button>
+</div>
+
+<pre id="output" style="background:#eee;padding:10px;white-space:pre-wrap;"></pre>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://vitjgnihandcyhupnrvd.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_d8TT3ezUWAIWEyw2lERu7A_hBn7-eMa";
+
+  const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  const out = document.getElementById("output");
+  function log(label, data) {
+    out.textContent += `\n\n--- ${label} ---\n` + JSON.stringify(data, null, 2);
+  }
+
+  document.getElementById("loginBtn").onclick = async () => {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+    log("LOGIN RESULT", { data, error });
+  };
+
+  document.getElementById("checkBtn").onclick = async () => {
+    const { data: sessionData } = await supabaseClient.auth.getSession();
+    const token = sessionData.session?.access_token;
+    let decoded = null;
+    if (token) {
+      decoded = JSON.parse(atob(token.split(".")[1]));
+    }
+    log("SESSION CHECK", { hasSession: !!sessionData.session, decodedRole: decoded?.role, decodedAud: decoded?.aud });
+  };
+
+  document.getElementById("insertBtn").onclick = async () => {
+    const { data, error } = await supabaseClient
+      .from("packages")
+      .insert([{
+        title: "Minimal Test",
+        destination: "Test Destination",
+        description: "test",
+        price: 100,
+        duration: "1 Day",
+        image_url: "",
+        is_active: true
+      }])
+      .select();
+
+    log("INSERT RESULT", { data, error });
+  };
+</script>
+
+</body>
+</html>
