@@ -1803,18 +1803,52 @@ h1, h2, h3 { font-family: var(--font-display); }
 
   /* ---------- FEATURED TRIP ---------- */
 
-  .featured-grid {
-    grid-template-columns: 1fr;
-    gap: 34px;
-  }
+  /* ---------- FEATURED TRIP ---------- */
 
-  .featured-media {
-    aspect-ratio: 4 / 3;
-  }
+.featured {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 
-  .featured-title {
-    font-size: 2.2rem;
-  }
+.featured-grid {
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.featured-media {
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+}
+
+.featured-title {
+  font-size: 1.9rem;
+  line-height: 1.1;
+  margin: 8px 0 5px;
+}
+
+.featured-meta {
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+}
+
+.featured-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 22px;
+}
+
+.featured-facts {
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.featured-facts strong {
+  font-size: 1.15rem;
+}
+
+.featured-facts span {
+  font-size: 0.7rem;
+}
 
   .featured-facts {
     gap: 24px;
@@ -1829,20 +1863,51 @@ h1, h2, h3 { font-family: var(--font-display); }
 
   /* ---------- PACKAGES ---------- */
 
-  .pkg-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-top: 32px;
-  }
+  /* ---------- PACKAGES ---------- */
 
-  .pkg-body {
-    padding: 18px;
-  }
+.pkg-grid {
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 30px;
+}
 
-  .pkg-body h3 {
-    font-size: 1.15rem;
-  }
+.pkg-card {
+  border-radius: 12px;
+}
 
+.pkg-img {
+  aspect-ratio: 16 / 9;
+}
+
+.pkg-body {
+  padding: 15px;
+}
+
+.pkg-body h3 {
+  font-size: 1.08rem;
+  margin-bottom: 4px;
+}
+
+.pkg-desc {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.pkg-meta {
+  font-size: 0.78rem;
+  padding-top: 10px;
+  margin-bottom: 12px;
+}
+
+.pkg-meta strong {
+  font-size: 0.9rem;
+}
+
+.pkg-actions .btn {
+  padding: 9px 15px;
+  font-size: 0.78rem;
+}
 
   /* ---------- BROCHURES ---------- */
 
