@@ -1647,3 +1647,409 @@ h1, h2, h3 { font-family: var(--font-display); }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .masonry { column-count: 1; }
 }
+
+/* ============================================================
+   KAATHAM — MOBILE RESPONSIVE FIX
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  /* ---------- GLOBAL ---------- */
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .section-title {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+    line-height: 1.08;
+  }
+
+  .section-lead {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+
+  /* ---------- NAVBAR ---------- */
+
+  .navbar {
+    height: 64px;
+  }
+
+  .brand-logo {
+    height: 48px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+.hero {
+  min-height: 78vh;
+}
+
+.hero-content {
+  width: 100%;
+  padding: 0 18px;
+}
+
+.hero-logo {
+  width: 85px;
+  height: 85px;
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 10vw, 3.2rem);
+  line-height: 1.02;
+}
+
+.hero-sub {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  max-width: 32ch;
+  margin-top: 14px;
+}
+
+.hero-actions {
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.hero-actions .btn {
+  padding: 11px 18px;
+  font-size: 0.84rem;
+}
+
+.hero-actions .btn-full {
+  width: 100%;
+  max-width: 340px;
+}
+
+  /* ---------- TREK HERO ---------- */
+
+  .trek-hero {
+    min-height: 78vh;
+  }
+
+  .trek-hero-content {
+    width: 100%;
+    padding: 0 18px;
+    margin-top: 30px;
+  }
+
+  .trek-hero .section-title {
+    font-size: clamp(3rem, 16vw, 5rem);
+    line-height: 0.95;
+  }
+
+  .trek-hero .section-lead {
+    font-size: 0.95rem;
+  }
+
+
+  /* ---------- DESTINATIONS ---------- */
+
+  .dest-grid {
+    margin-top: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .dest-card {
+    aspect-ratio: 3 / 4;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .dest-card--lg {
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 16 / 9;
+  }
+
+  .dest-name {
+    font-size: 1.15rem;
+  }
+
+  .dest-card--lg .dest-name {
+    font-size: 1.55rem;
+  }
+
+  .dest-tag {
+    font-size: 0.68rem;
+  }
+
+
+  /* ---------- FEATURED TRIP ---------- */
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .featured-media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .featured-title {
+    font-size: 2.2rem;
+  }
+
+  .featured-facts {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .route-line span {
+    font-size: 0.72rem;
+    padding: 5px 10px;
+  }
+
+
+  /* ---------- PACKAGES ---------- */
+
+  .pkg-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .pkg-body {
+    padding: 18px;
+  }
+
+  .pkg-body h3 {
+    font-size: 1.15rem;
+  }
+
+
+  /* ---------- BROCHURES ---------- */
+
+  .brochure-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .brochure-card {
+    min-height: 300px;
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .brochure-card h3 {
+    font-size: 22px;
+  }
+
+
+  /* ---------- CINEMATIC ---------- */
+
+  .cinematic {
+    padding: 90px 18px;
+    background-attachment: scroll;
+  }
+
+  .cinematic-line {
+    font-size: 1.5rem;
+  }
+
+
+  /* ---------- EXPERIENCES ---------- */
+
+  .exp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .exp-card {
+    padding: 24px 12px;
+  }
+
+  .exp-icon {
+    font-size: 1.6rem;
+  }
+
+
+  /* ---------- WHY KAATHAM ---------- */
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-top: 32px;
+  }
+
+
+  /* ---------- HOW IT WORKS ---------- */
+
+  .timeline {
+    margin-top: 34px;
+  }
+
+  .timeline li {
+    gap: 16px;
+    padding: 20px 0;
+  }
+
+  .tl-num {
+    width: 35px;
+    font-size: 1.25rem;
+  }
+
+
+  /* ---------- ABOUT ---------- */
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-media {
+    aspect-ratio: 4 / 3;
+  }
+
+
+  /* ---------- INDIA MAP ---------- */
+
+  .map-wrap {
+    max-width: 340px;
+    margin-top: 36px;
+  }
+
+  .map-pin {
+    font-size: 0.65rem;
+    padding: 5px 9px;
+  }
+
+
+  /* ---------- STATS ---------- */
+
+  .stats {
+    padding: 60px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 10px;
+  }
+
+  .stat-num {
+    font-size: 2.3rem;
+  }
+
+
+  /* ---------- TESTIMONIALS ---------- */
+
+  .testi-card {
+    padding: 28px 20px;
+  }
+
+  .testi-card p {
+    font-size: 1.2rem;
+  }
+
+
+  /* ---------- GALLERY ---------- */
+
+  .masonry {
+    column-count: 2;
+    column-gap: 10px;
+    margin-top: 32px;
+  }
+
+  .gallery-item {
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+  .gallery-item figcaption {
+    padding: 12px;
+  }
+
+
+  /* ---------- LIGHTBOX ---------- */
+
+  .lightbox {
+    padding: 12px;
+  }
+
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+
+  .lightbox-prev {
+    left: 8px;
+  }
+
+  .lightbox-next {
+    right: 8px;
+  }
+
+
+  /* ---------- MALAYALAM ---------- */
+
+  .mal-text {
+    font-size: 1.3rem;
+  }
+
+  .mal-sub {
+    font-size: 0.95rem;
+  }
+
+
+  /* ---------- INSTAGRAM ---------- */
+
+  .insta-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 32px;
+  }
+
+
+  /* ---------- FINAL CTA ---------- */
+
+  .final-cta {
+    padding: 90px 18px;
+    background-attachment: scroll;
+  }
+
+  .final-cta h2 {
+    font-size: 2.2rem;
+  }
+
+  .final-cta p {
+    font-size: 0.98rem;
+  }
+
+
+  /* ---------- BUTTONS ---------- */
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 0.88rem;
+  }
+
+}
