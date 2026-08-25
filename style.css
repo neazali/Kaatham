@@ -1872,6 +1872,69 @@ h1, h2, h3 { font-family: var(--font-display); }
   padding: 3px 7px;
 }
 
+/* ==========================================================
+   FEATURED TRIP — MOBILE
+   ========================================================== */
+
+.featured {
+  padding: 38px 0;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.featured-media {
+  width: 100%;
+  aspect-ratio: 16 / 8.5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.featured-title {
+  font-size: 1.45rem;
+  line-height: 1.1;
+  margin: 4px 0;
+}
+
+.featured-meta {
+  font-size: 0.72rem;
+  margin-bottom: 10px;
+}
+
+.featured-text {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin-bottom: 14px;
+}
+
+.featured-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-bottom: 14px;
+}
+
+.featured-facts strong {
+  font-size: 0.92rem;
+}
+
+.featured-facts span {
+  font-size: 0.62rem;
+}
+
+.route-line {
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.route-line span {
+  font-size: 0.62rem;
+  padding: 3px 7px;
+}
+
   /* ==========================================================
      PACKAGES
      ========================================================== */
