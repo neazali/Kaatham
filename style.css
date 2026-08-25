@@ -1810,67 +1810,67 @@ h1, h2, h3 { font-family: var(--font-display); }
 
 
   /* ==========================================================
-     FEATURED TRIP
-     ========================================================== */
+   FEATURED TRIP — MOBILE
+   ========================================================== */
 
-  .featured {
-    padding: 54px 0;
-  }
+.featured {
+  padding: 38px 0;
+}
 
-  .featured-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
 
-  .featured-media {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    border-radius: 12px;
-  }
+.featured-media {
+  width: 100%;
+  aspect-ratio: 16 / 8.5;
+  border-radius: 12px;
+  overflow: hidden;
+}
 
-  .featured-title {
-    font-size: 1.7rem;
-    line-height: 1.08;
-    margin: 6px 0;
-  }
+.featured-title {
+  font-size: 1.45rem;
+  line-height: 1.1;
+  margin: 4px 0;
+}
 
-  .featured-meta {
-    font-size: 0.78rem;
-    margin-bottom: 14px;
-  }
+.featured-meta {
+  font-size: 0.72rem;
+  margin-bottom: 10px;
+}
 
-  .featured-text {
-    font-size: 0.86rem;
-    line-height: 1.55;
-    margin-bottom: 18px;
-  }
+.featured-text {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin-bottom: 14px;
+}
 
-  .featured-facts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px 20px;
-    margin-bottom: 18px;
-  }
+.featured-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-bottom: 14px;
+}
 
-  .featured-facts strong {
-    font-size: 1rem;
-  }
+.featured-facts strong {
+  font-size: 0.92rem;
+}
 
-  .featured-facts span {
-    font-size: 0.66rem;
-  }
+.featured-facts span {
+  font-size: 0.62rem;
+}
 
-  .route-line {
-    gap: 6px;
-    flex-wrap: wrap;
-  }
+.route-line {
+  gap: 5px;
+  flex-wrap: wrap;
+}
 
-  .route-line span {
-    font-size: 0.65rem;
-    padding: 4px 8px;
-  }
-
+.route-line span {
+  font-size: 0.62rem;
+  padding: 3px 7px;
+}
 
   /* ==========================================================
      PACKAGES
