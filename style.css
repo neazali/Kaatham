@@ -139,7 +139,7 @@ h1, h2, h3 { font-family: var(--font-display); }
 
 /* ---------- LOADER ---------- */
 #loader {
-  position: fixed; inset: 0; z-index: 9999;
+  position: fixed; inset: 0; z-index: 100000;
   background: var(--ink);
   display: flex; align-items: center; justify-content: center;
   transition: opacity 0.6s ease, visibility 0.6s ease;
@@ -1876,60 +1876,74 @@ h1, h2, h3 { font-family: var(--font-display); }
      PACKAGES
      ========================================================== */
 
-  .pkg-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-top: 26px;
-  }
+  /* ---------- PACKAGES — MOBILE HORIZONTAL SWIPE ---------- */
 
-  .pkg-card {
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-  }
+.pkg-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 
-  .pkg-img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-  }
+  margin-top: 30px;
 
-  .pkg-body {
-    padding: 14px;
-  }
+  overflow-x: auto;
+  overflow-y: hidden;
 
-  .pkg-body h3 {
-    font-size: 1.02rem;
-    line-height: 1.2;
-    margin-bottom: 5px;
-  }
+  padding: 4px 18px 18px 2px;
 
-  .pkg-desc {
-    font-size: 0.8rem;
-    line-height: 1.45;
-    margin-bottom: 10px;
-  }
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 
-  .pkg-meta {
-    font-size: 0.72rem;
-    padding-top: 9px;
-    margin-bottom: 10px;
-  }
+  scrollbar-width: none;
+}
 
-  .pkg-meta strong {
-    font-size: 0.86rem;
-  }
+.pkg-grid::-webkit-scrollbar {
+  display: none;
+}
 
-  .pkg-actions {
-    gap: 8px;
-  }
+.pkg-card {
+  flex: 0 0 84%;
+  max-width: 360px;
 
-  .pkg-actions .btn {
-    padding: 8px 13px;
-    font-size: 0.72rem;
-  }
+  scroll-snap-align: start;
 
+  border-radius: 14px;
+
+  overflow: hidden;
+}
+
+.pkg-img {
+  aspect-ratio: 16 / 9;
+}
+
+.pkg-body {
+  padding: 16px;
+}
+
+.pkg-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.pkg-desc {
+  font-size: 0.84rem;
+  line-height: 1.45;
+  margin-bottom: 13px;
+}
+
+.pkg-meta {
+  font-size: 0.78rem;
+  padding-top: 11px;
+  margin-bottom: 13px;
+}
+
+.pkg-meta strong {
+  font-size: 0.92rem;
+}
+
+.pkg-actions .btn {
+  padding: 9px 16px;
+  font-size: 0.78rem;
+}
 
   /* ==========================================================
      BROCHURES
