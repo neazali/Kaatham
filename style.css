@@ -1323,6 +1323,62 @@ h1, h2, h3 { font-family: var(--font-display); }
     }
 }
 
+/* =================================
+   TRAVEL BROCHURES SECTION
+================================= */
+/* =================================
+   TRAVEL BROCHURES SECTION
+================================= */
+
+.brochures-section {
+    position: relative;
+
+    margin-top: 110px;
+    padding: 85px 0 100px;
+
+    background: #fff;
+
+    border-radius: 0;
+
+    box-shadow: none;
+}
+
+/* Elegant section divider */
+
+.brochures-section::before {
+    content: "";
+
+    position: absolute;
+    top: -32px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90px;
+    height: 1px;
+
+    background: rgba(20, 24, 29, 0.25);
+}
+
+/* Small centre accent */
+
+.brochures-section::after {
+    content: "";
+
+    position: absolute;
+    top: -35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 7px;
+    height: 7px;
+
+    background: #14181d;
+
+    border-radius: 50%;
+}
+
 /* ---------- CINEMATIC ---------- */
 .cinematic {
   position: relative; padding: 160px 0; background: var(--img) center/cover no-repeat fixed;
@@ -2475,5 +2531,124 @@ h1, h2, h3 { font-family: var(--font-display); }
 
   .lightbox-next {
     right: 5px;
+  }
+}
+
+
+
+
+
+/* =====================================================
+   ABOUT KAATHAM — CINEMATIC BELT
+===================================================== */
+
+.about {
+  padding: 0;
+  margin: 0;
+}
+
+.about-cinematic {
+  position: relative;
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+
+  background-image: url("IMAGES/Himachal.jpg.jpg");
+  background-size: cover;
+  background-position: center 60%;
+
+  overflow: hidden;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.82),
+    rgba(0, 0, 0, 0.60),
+    rgba(0, 0, 0, 0.40)
+  );
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+
+  color: #fff;
+}
+
+.about-content .eyebrow {
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 14px;
+}
+
+.about-content .section-title {
+  color: #fff;
+  max-width: 700px;
+  margin-bottom: 28px;
+}
+
+.about-text {
+  max-width: 720px;
+}
+
+.about-text p {
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.about-content .btn-light {
+  display: inline-flex;
+  margin-top: 14px;
+
+  background: #fff;
+  color: #14181d;
+
+  border: 1px solid #fff;
+}
+
+.about-content .btn-light:hover {
+  background: transparent;
+  color: #fff;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+  .about-cinematic {
+    min-height: auto;
+    background-position: center;
+  }
+
+  .about-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.85)
+    );
+  }
+
+  .about-content {
+    padding: 70px 22px;
+  }
+
+  .about-content .section-title {
+    font-size: clamp(32px, 9vw, 46px);
+    line-height: 1.08;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.75;
   }
 }
