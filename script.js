@@ -318,29 +318,171 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // ---------- TRIP DETAILS MODAL ----------
-  // Opens/closes the "View Journey" modal for the Spiti Circuit trip.
-  const tripModal = document.getElementById('tripModal');
-  const viewJourneyBtn = document.getElementById('viewJourneyBtn');
-  const detailButtons = document.querySelectorAll('[data-view-details]');
 
-  function openModal() {
+const tripModal = document.getElementById('tripModal');
+const viewJourneyBtn = document.getElementById('viewJourneyBtn');
+
+function openTripModal(pkg) {
+
+  if (!tripModal || !pkg) return;
+
+  // Title
+  const modalTitle = document.getElementById('modal-trip-title');
+  if (modalTitle) {
+    modalTitle.textContent = pkg.title || '';
+  }
+
+  // Duration
+  const tripModalTitle = document.getElementById('tripModalTitle');
+  if (tripModalTitle) {
+    tripModalTitle.textContent =
+      `${pkg.duration || ''} · ${pkg.destination || ''}`;
+  }
+
+  // Description
+  const modalDescription =
+    document.getElementById('modal-description');
+
+  if (modalDescription) {
+    modalDescription.textContent = pkg.description || '';
+  }
+
+  // Route
+  const modalRoute = document.getElementById('modal-route');
+
+  if (modalRoute) {
+    modalRoute.textContent = pkg.route || '';
+  }
+
+  // Highlights
+  const modalHighlights =
+    document.getElementById('modal-highlights');
+
+  if (modalHighlights) {
+    modalHighlights.innerHTML = '';
+
+    if (pkg.highlights) {
+      pkg.highlights
+        .split(',')
+        .map(item => item.trim())
+        .filter(Boolean)
+        .forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          modalHighlights.appendChild(li);
+        });
+    }
+  }
+
+  // Departure
+  const modalDeparture =
+    document.getElementById('modal-departure');
+
+  if (modalDeparture) {
+    modalDeparture.textContent =
+      `${pkg.departure || ''} · ${pkg.destination || ''} · ₹${Number(pkg.price || 0).toLocaleString('en-IN')} per head`;
+  }
+
+  // Inclusions
+  const modalInclusions =
+    document.getElementById('model-inclusions');
+
+  if (modalInclusions) {
+    modalInclusions.innerHTML = '';
+
+    if (pkg.inclusions) {
+      pkg.inclusions
+        .split(',')
+        .map(item => item.trim())
+        .filter(Boolean)
+        .forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          modalInclusions.appendChild(li);
+        });
+    }
+  }
+
+  // Exclusions
+  const modalExclusions =
+    document.getElementById('modal-exclusions');
+
+  if (modalExclusions) {
+    modalExclusions.innerHTML = '';
+
+    if (pkg.exclusions) {
+      pkg.exclusions
+        .split(',')
+        .map(item => item.trim())
+        .filter(Boolean)
+        .forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          modalExclusions.appendChild(li);
+        });
+    }
+  }
+
+  // Enquire button
+  const modalEnquireButton =
+    document.getElementById('modal-enquire-btn');
+
+  if (modalEnquireButton) {
+    modalEnquireButton.setAttribute(
+      'data-trip',
+      pkg.title || ''
+    );
+  }
+
+  // Open modal
+  tripModal.hidden = false;
+  document.body.style.overflow = 'hidden';
+}
+
+
+// Existing Featured Trip button
+if (viewJourneyBtn) {
+  viewJourneyBtn.addEventListener('click', function () {
+
+    // Featured trip data is already loaded into the modal
     tripModal.hidden = false;
     document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    tripModal.hidden = true;
-    document.body.style.overflow = '';
+
+  });
+}
+
+
+// Close modal
+function closeModal() {
+  if (!tripModal) return;
+
+  tripModal.hidden = true;
+  document.body.style.overflow = '';
+}
+
+if (tripModal) {
+
+  tripModal
+    .querySelectorAll('[data-close-modal]')
+    .forEach(function (el) {
+      el.addEventListener('click', closeModal);
+    });
+
+}
+
+
+// Escape key
+document.addEventListener('keydown', function (e) {
+
+  if (
+    e.key === 'Escape' &&
+    tripModal &&
+    !tripModal.hidden
+  ) {
+    closeModal();
   }
 
-  if (viewJourneyBtn) viewJourneyBtn.addEventListener('click', openModal);
-  detailButtons.forEach(function (btn) { btn.addEventListener('click', openModal); });
-
-  tripModal.querySelectorAll('[data-close-modal]').forEach(function (el) {
-    el.addEventListener('click', closeModal);
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !tripModal.hidden) closeModal();
-  });
+});
 
 
   // ---------- TRAVELLERS' EXPERIENCES — LIGHTBOX VIEWER ----------
@@ -574,7 +716,6 @@ async function loadPackages() {
         return;
     }
 
-    // Dynamic journey details
     console.log("Packages loaded:", data);
 
     const packagesGrid = document.getElementById('package-grid');
@@ -596,16 +737,19 @@ async function loadPackages() {
                 <h3>${pkg.title}</h3>
 
                 <p class="pkg-desc">
-                    ${pkg.description}
+                    ${pkg.description || ''}
                 </p>
 
                 <div class="pkg-meta">
-                    <span>${pkg.duration}</span>
-                    <strong>From ₹${pkg.price}</strong>
+                    <span>${pkg.duration || ''}</span>
+                    <strong>From ₹${Number(pkg.price || 0).toLocaleString('en-IN')}</strong>
                 </div>
 
                 <div class="pkg-actions">
-                    <button class="btn-link" data-view-details>
+                    <button
+                        class="btn-link"
+                        data-view-details
+                        data-package-id="${pkg.id}">
                         View Details
                     </button>
 
@@ -619,13 +763,228 @@ async function loadPackages() {
         `;
 
         packagesGrid.appendChild(card);
+
+        // Connect this package to the existing trip modal
+        const detailsButton = card.querySelector('[data-view-details]');
+
+        if (detailsButton) {
+            detailsButton.addEventListener('click', function () {
+                openTripModal(pkg);
+            });
+        }
     });
 }
 
+// ---------- TRIP DETAILS MODAL ----------
+
+const tripModal = document.getElementById('tripModal');
+const viewJourneyBtn = document.getElementById('viewJourneyBtn');
+
+function openTripModal(pkg) {
+
+  if (!tripModal || !pkg) return;
+
+  // Title
+  const modalTitle = document.getElementById('modal-trip-title');
+
+  if (modalTitle) {
+    modalTitle.textContent = pkg.title || '';
+  }
+
+  // Duration + destination
+  const tripModalTitle = document.getElementById('tripModalTitle');
+
+  if (tripModalTitle) {
+    tripModalTitle.textContent =
+      `${pkg.duration || ''} · ${pkg.destination || ''}`;
+  }
+
+  // Description
+  const modalDescription =
+    document.getElementById('modal-description');
+
+  if (modalDescription) {
+    modalDescription.textContent =
+      pkg.description || '';
+  }
+
+  // Route
+  const modalRoute =
+    document.getElementById('modal-route');
+
+  if (modalRoute) {
+    modalRoute.textContent =
+      pkg.route || '';
+  }
+
+  // Highlights
+  const modalHighlights =
+    document.getElementById('modal-highlights');
+
+  if (modalHighlights) {
+
+    modalHighlights.innerHTML = '';
+
+    if (pkg.highlights) {
+
+      pkg.highlights
+        .split(',')
+        .map(item => item.trim())
+        .filter(Boolean)
+        .forEach(item => {
+
+          const li = document.createElement('li');
+
+          li.textContent = item;
+
+          modalHighlights.appendChild(li);
+
+        });
+    }
+  }
+
+  // Departure
+  const modalDeparture =
+    document.getElementById('modal-departure');
+
+  if (modalDeparture) {
+
+    modalDeparture.textContent =
+      `${pkg.departure || ''} · ${pkg.destination || ''} · ₹${Number(pkg.price || 0).toLocaleString('en-IN')} per head`;
+
+  }
+
+  // Inclusions
+  const modalInclusions =
+    document.getElementById('model-inclusions');
+
+  if (modalInclusions) {
+
+    modalInclusions.innerHTML = '';
+
+    if (pkg.inclusions) {
+
+      pkg.inclusions
+        .split(',')
+        .map(item => item.trim())
+        .filter(Boolean)
+        .forEach(item => {
+
+          const li = document.createElement('li');
+
+          li.textContent = item;
+
+          modalInclusions.appendChild(li);
+
+        });
+    }
+  }
+
+  // Exclusions
+  const modalExclusions =
+    document.getElementById('modal-exclusions');
+
+  if (modalExclusions) {
+
+    modalExclusions.innerHTML = '';
+
+    if (pkg.exclusions) {
+
+      pkg.exclusions
+        .split(',')
+        .map(item => item.trim())
+        .filter(Boolean)
+        .forEach(item => {
+
+          const li = document.createElement('li');
+
+          li.textContent = item;
+
+          modalExclusions.appendChild(li);
+
+        });
+    }
+  }
+
+  // Enquire button
+  const modalEnquireButton =
+    document.getElementById('modal-enquire-btn');
+
+  if (modalEnquireButton) {
+
+    modalEnquireButton.setAttribute(
+      'data-trip',
+      pkg.title || ''
+    );
+
+  }
+
+  // Open modal
+  tripModal.hidden = false;
+
+  document.body.style.overflow = 'hidden';
+}
+
+
+// ---------- FEATURED TRIP VIEW JOURNEY ----------
+
+if (viewJourneyBtn) {
+
+  viewJourneyBtn.addEventListener('click', function () {
+
+    tripModal.hidden = false;
+
+    document.body.style.overflow = 'hidden';
+
+  });
+
+}
+
+
+// ---------- CLOSE MODAL ----------
+
+function closeModal() {
+
+  if (!tripModal) return;
+
+  tripModal.hidden = true;
+
+  document.body.style.overflow = '';
+
+}
+
+
+if (tripModal) {
+
+  tripModal
+    .querySelectorAll('[data-close-modal]')
+    .forEach(function (el) {
+
+      el.addEventListener('click', closeModal);
+
+    });
+
+}
+
+
+// ---------- ESCAPE KEY ----------
+
+document.addEventListener('keydown', function (e) {
+
+  if (
+    e.key === 'Escape' &&
+    tripModal &&
+    !tripModal.hidden
+  ) {
+
+    closeModal();
+
+  }
+
+});
+
 loadPackages();
 
-console.log("Grid found:", 
-document.getElementById("package-grid"));
 
 // =============================
 // LOAD BROCHURES
