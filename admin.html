@@ -606,6 +606,172 @@ header {
     transform: translateY(-1px);
 }
 
+/* =========================================
+   📱 KAATHAM ADMIN — MOBILE FIX
+========================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        padding: 16px;
+    }
+
+    .header-inner {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .header-inner h1 {
+        font-size: 20px;
+    }
+
+    .logout-btn {
+        padding: 8px 11px;
+        font-size: 13px;
+    }
+
+    .dashboard-content {
+        width: 100%;
+        margin: 25px auto;
+        padding: 0 14px;
+    }
+
+    /* Section headers */
+
+    .packages-header {
+        width: 100%;
+        padding: 16px;
+        margin-top: 28px;
+        margin-bottom: 16px;
+        border-radius: 12px;
+    }
+
+    .packages-header h2 {
+        font-size: 20px;
+    }
+
+    .packages-header p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* Add buttons */
+
+    .add-package-btn {
+        width: 100%;
+        min-height: 44px;
+    }
+
+    /* All cards */
+
+    .package,
+    #featured-trips-list > *,
+    #brochures-list > * {
+        width: 100%;
+        padding: 17px;
+        margin: 0;
+        border-radius: 12px;
+    }
+
+    /* Package text */
+
+    .package h3 {
+        font-size: 19px;
+    }
+
+    .package p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .package .price {
+        font-size: 18px;
+    }
+
+    /* Package actions */
+
+    .package-admin-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .package-admin-actions button {
+        flex: 1;
+        min-height: 40px;
+    }
+
+    /* Forms */
+
+    .package-form-container {
+        width: 100%;
+        padding: 18px;
+        margin-top: 16px;
+        border-radius: 12px;
+    }
+
+    .package-form-container h3 {
+        font-size: 19px;
+        margin-bottom: 18px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .package-form-container input[type="text"],
+    .package-form-container input[type="number"],
+    .package-form-container input[type="url"],
+    .package-form-container input[type="file"],
+    .package-form-container textarea {
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    .package-form-container textarea {
+        min-height: 100px;
+    }
+
+    /* Form buttons */
+
+    .form-actions {
+        width: 100%;
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    .form-actions button {
+        width: 100%;
+        min-height: 44px;
+    }
+
+    /* Active checkbox */
+
+    .active-option {
+        width: 100%;
+        padding: 11px;
+        margin-bottom: 18px;
+    }
+
+    /* Featured + brochure lists */
+
+    #featured-trips-list,
+    #brochures-list {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+}
+
     </style>
 </head>
 
