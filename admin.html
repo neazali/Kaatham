@@ -849,6 +849,179 @@
 </section>
 
 
+<!-- =================================================
+     TREKS
+================================================== -->
+
+<section class="admin-section">
+
+    <div class="packages-header">
+
+        <div>
+
+            <h2>Treks</h2>
+
+            <p>
+                Manage treks shown on the Trek With Us page.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            id="addTrekBtn"
+            class="add-package-btn">
+
+            + Add Trek
+
+        </button>
+
+    </div>
+
+
+    <!-- TREK FORM -->
+
+    <div
+        id="trekFormContainer"
+        class="package-form-container"
+        hidden>
+
+        <h3 id="trekFormTitle">
+            Add Trek
+        </h3>
+
+
+        <form id="trekForm">
+
+
+            <!-- TITLE -->
+
+            <div class="form-group">
+
+                <label for="trek-title">
+                    Trek Name
+                </label>
+
+                <input
+                    type="text"
+                    id="trek-title"
+                    placeholder="Kedarkantha Trek"
+                    required>
+
+            </div>
+
+
+            <!-- DESTINATION -->
+
+            <div class="form-group">
+
+                <label for="trek-destination">
+                    Destination
+                </label>
+
+                <input
+                    type="text"
+                    id="trek-destination"
+                    placeholder="Uttarakhand"
+                    required>
+
+            </div>
+
+
+            <!-- IMAGE -->
+
+            <div class="form-group">
+
+                <label for="trek-image">
+                    Image URL
+                </label>
+
+                <input
+                    type="text"
+                    id="trek-image"
+                    placeholder="IMAGES/kedarkantha.jpg"
+                    required>
+
+            </div>
+
+
+            <!-- DISPLAY ORDER -->
+
+            <div class="form-group">
+
+                <label for="trek-order">
+                    Display Order
+                </label>
+
+                <input
+                    type="number"
+                    id="trek-order"
+                    value="0"
+                    min="0">
+
+            </div>
+
+
+            <!-- ACTIVE -->
+
+            <label class="active-option">
+
+                <input
+                    type="checkbox"
+                    id="trek-active"
+                    checked>
+
+                Show this trek
+
+            </label>
+
+
+            <!-- ACTIONS -->
+
+            <div class="form-actions">
+
+                <button
+                    type="submit"
+                    class="save-package-btn"
+                    id="saveTrekBtn">
+
+                    Save Trek
+
+                </button>
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelTrekBtn">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+
+            <p id="trekFormMessage"></p>
+
+        </form>
+
+    </div>
+
+
+    <!-- TREKS LIST -->
+
+    <div
+        id="treksAdminGrid"
+        class="packages-admin-grid">
+
+        <p class="data-loading">
+            Loading treks...
+        </p>
+
+    </div>
+
+</section>
+
             <!-- =================================================
                  BROCHURES
             ================================================== -->

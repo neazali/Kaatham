@@ -839,11 +839,8 @@ async function loadCollegeTrips() {
                 .select('*')
                 .eq('is_active', true)
                 .order('display_order', {
-                    ascending: true
-                })
-                .order('created_at', {
-                    ascending: false
-                });
+    ascending: true
+});
 
 
         /* ---------- ERROR ---------- */
@@ -2506,3 +2503,187 @@ Please contact me regarding this trip.`;
 
     }
 );
+
+/* =========================================================
+   TREKS — CUSTOMER WEBSITE
+========================================================= */
+
+async function loadTreks() {
+
+    const grid = document.getElementById("treksGrid");
+
+    if (!grid) return;
+
+    grid.innerHTML = "<p>Loading treks...</p>";
+
+    try {
+
+        const { data, error } = await supabaseClient
+            .from("treks")
+            .select("*")
+            .eq("is_active", true)
+            .order("display_order", {
+                ascending: true
+            })
+            .order("created_at", {
+                ascending: false
+            });
+
+        if (error) {
+
+            console.error("Error loading treks:", error);
+
+            grid.innerHTML =
+                "<p>Could not load treks.</p>";
+
+            return;
+        }
+
+        if (!data || data.length === 0) {
+
+            grid.innerHTML =
+                "<p>No treks available at the moment.</p>";
+
+            return;
+        }
+
+        grid.innerHTML = "";
+
+        data.forEach((trek, index) => {
+
+            const card =
+                document.createElement("a");
+
+            card.className =
+                index === 0
+                    ? "dest-card dest-card--lg"
+                    : "dest-card";
+
+           card.href = "index.html";
+
+card.addEventListener("click", function () {
+
+    sessionStorage.setItem(
+        "selectedTrek",
+        trek.title
+    );
+
+});
+            card.style.setProperty(
+                "--img",
+                `url('${trek.image_url}')`
+            );
+
+            card.innerHTML = `
+                <span class="dest-name">
+                    ${trek.title || ""}
+                </span>
+
+                <span class="dest-tag">
+                    ${trek.destination || ""}
+                </span>
+            `;
+
+            grid.appendChild(card);
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Unexpected trek loading error:",
+            error
+        );
+
+        grid.innerHTML =
+            "<p>Something went wrong while loading treks.</p>";
+    }
+}
+
+loadTreks();
+
+
+/* =========================================================
+   TREK → ENQUIRY
+========================================================= */
+
+function selectTrekFromStorage() {
+
+    const trekTitle =
+        sessionStorage.getItem("selectedTrek");
+
+    if (!trekTitle) return;
+
+    const destinationSelect =
+        document.getElementById("destination");
+
+    if (!destinationSelect) return;
+
+    destinationSelect.value = trekTitle;
+
+    sessionStorage.removeItem("selectedTrek");
+
+    const enquirySection =
+        document.getElementById("enquiry");
+
+    if (enquirySection) {
+
+        setTimeout(() => {
+
+            enquirySection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }, 300);
+    }
+}
+
+/* =========================================================
+   LOAD TREKS INTO ENQUIRY DROPDOWN
+========================================================= */
+
+async function loadTreksIntoEnquiry() {
+
+    const destinationSelect =
+        document.getElementById("destination");
+
+    if (!destinationSelect) return;
+
+    const { data, error } =
+        await supabaseClient
+            .from("treks")
+            .select("title")
+            .eq("is_active", true)
+            .order("display_order", {
+                ascending: true
+            });
+
+    if (error) {
+
+        console.error(
+            "Error loading trek enquiry options:",
+            error
+        );
+
+        return;
+    }
+
+    data.forEach(trek => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = trek.title;
+        option.textContent = trek.title;
+
+        destinationSelect.insertBefore(
+            option,
+            destinationSelect.lastElementChild
+        );
+    });
+
+    // Select trek from URL after options are loaded
+    selectTrekFromStorage();
+}
+
+loadTreksIntoEnquiry();

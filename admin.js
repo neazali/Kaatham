@@ -144,6 +144,7 @@ async function showDashboard() {
     await loadFeaturedTripsAdmin();
     await loadBrochures();
     await loadMalayalamSection();
+    await loadTreks();
 }
 
 
@@ -2869,19 +2870,14 @@ async function loadCollegeTrips() {
                             type="button"
                             class="edit-package-btn"
                             data-edit-college-trip="${trip.id}">
-
                             Edit
-
                         </button>
-
 
                         <button
                             type="button"
-                            class="delete-package-btn"
+                            class="delete-college-trip-btn"
                             data-delete-college-trip="${trip.id}">
-
                             Delete
-
                         </button>
 
                     </div>
@@ -3412,20 +3408,31 @@ document.addEventListener(
                 }
 
 
-                const deleteButton =
-                    e.target.closest(
-                        '[data-delete-college-trip]'
-                    );
+                const deleteButton = e.target.closest(
+    '[data-delete-college-trip]'
+);
 
-                if (deleteButton) {
+if (deleteButton) {
 
-                    deleteCollegeTrip(
-                        deleteButton.dataset
-                            .deleteCollegeTrip
-                    );
+    const tripId =
+        deleteButton.getAttribute(
+            'data-delete-college-trip'
+        );
 
-                }
+    console.log(
+        'Deleting college trip ID:',
+        tripId
+    );
 
+    if (!tripId) {
+        alert('College trip ID is missing.');
+        return;
+    }
+
+    deleteCollegeTrip(tripId);
+
+    return;
+}
             }
         );
 
@@ -3433,6 +3440,739 @@ document.addEventListener(
         /* ---------- INITIAL LOAD ---------- */
 
         loadCollegeTrips();
+
+    }
+);
+
+
+/* ============================================================
+   TREKS — ADMIN
+============================================================ */
+
+let editingTrekId = null;
+
+
+/* ============================================================
+   LOAD TREKS
+============================================================ */
+
+async function loadTreks() {
+
+    const grid =
+        document.getElementById("treksAdminGrid");
+
+    if (!grid) return;
+
+    grid.innerHTML = `
+        <p class="data-loading">
+            Loading treks...
+        </p>
+    `;
+
+    try {
+
+        const { data, error } =
+            await supabaseClient
+                .from("treks")
+                .select("*")
+                .order("display_order", {
+                    ascending: true
+                })
+                .order("created_at", {
+                    ascending: false
+                });
+
+
+        if (error) {
+
+            console.error(
+                "Treks load error:",
+                error
+            );
+
+            grid.innerHTML = `
+                <p class="data-error">
+                    Unable to load treks.
+                </p>
+            `;
+
+            return;
+        }
+
+
+        if (!data || data.length === 0) {
+
+            grid.innerHTML = `
+                <p class="data-empty">
+                    No treks added yet.
+                </p>
+            `;
+
+            return;
+        }
+
+
+        grid.innerHTML = "";
+
+
+        data.forEach(trek => {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "package-admin-card";
+
+
+            card.innerHTML = `
+
+                <div
+                    class="package-admin-image"
+                    style="
+                        background-image:
+                        url('${trek.image_url || ""}');
+                    ">
+                </div>
+
+
+                <div class="package-admin-content">
+
+                    <div class="package-admin-top">
+
+                        <h3>
+                            ${trek.title || ""}
+                        </h3>
+
+                        <span class="
+                            ${
+                                trek.is_active
+                                    ? "status-active"
+                                    : "status-inactive"
+                            }
+                        ">
+                            ${
+                                trek.is_active
+                                    ? "Active"
+                                    : "Hidden"
+                            }
+                        </span>
+
+                    </div>
+
+
+                    <p class="package-admin-destination">
+                        ${trek.destination || ""}
+                    </p>
+
+
+                    <p>
+                        Display order:
+                        ${trek.display_order ?? 0}
+                    </p>
+
+
+                    <div class="package-admin-actions">
+
+                        <button
+                            type="button"
+                            class="edit-trek-btn"
+                            data-edit-trek="${trek.id}">
+                            ✏️ Edit
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="delete-trek-btn"
+                            data-delete-trek="${trek.id}">
+                            🗑️ Delete
+                        </button>
+
+                    </div>
+
+                </div>
+            `;
+
+
+            grid.appendChild(card);
+
+        });
+
+
+    } catch (err) {
+
+        console.error(
+            "Unexpected treks error:",
+            err
+        );
+
+        grid.innerHTML = `
+            <p class="data-error">
+                Something went wrong while loading treks.
+            </p>
+        `;
+    }
+}
+
+
+/* ============================================================
+   RESET TREK FORM
+============================================================ */
+
+function resetTrekForm() {
+
+    const form =
+        document.getElementById("trekForm");
+
+    const container =
+        document.getElementById(
+            "trekFormContainer"
+        );
+
+    const title =
+        document.getElementById(
+            "trekFormTitle"
+        );
+
+
+    if (form) {
+        form.reset();
+    }
+
+
+    const order =
+        document.getElementById(
+            "trek-order"
+        );
+
+    const active =
+        document.getElementById(
+            "trek-active"
+        );
+
+
+    if (order) {
+        order.value = 0;
+    }
+
+
+    if (active) {
+        active.checked = true;
+    }
+
+
+    if (title) {
+        title.textContent =
+            "Add New Trek";
+    }
+
+
+    editingTrekId = null;
+
+
+    if (container) {
+        container.hidden = true;
+    }
+}
+
+
+/* ============================================================
+   EDIT TREK
+============================================================ */
+
+async function editTrek(id) {
+
+    try {
+
+        const { data, error } =
+            await supabaseClient
+                .from("treks")
+                .select("*")
+                .eq("id", id)
+                .single();
+
+
+        if (error) {
+
+            console.error(
+                "Trek edit error:",
+                error
+            );
+
+            alert(
+                "Unable to load this trek."
+            );
+
+            return;
+        }
+
+
+        editingTrekId =
+            id;
+
+
+        document.getElementById(
+            "trek-title"
+        ).value =
+            data.title || "";
+
+
+        document.getElementById(
+            "trek-destination"
+        ).value =
+            data.destination || "";
+
+
+        document.getElementById(
+            "trek-image"
+        ).value =
+            data.image_url || "";
+
+
+        document.getElementById(
+            "trek-order"
+        ).value =
+            data.display_order || 0;
+
+
+        document.getElementById(
+            "trek-active"
+        ).checked =
+            data.is_active;
+
+
+        document.getElementById(
+            "trekFormTitle"
+        ).textContent =
+            "Edit Trek";
+
+
+        document.getElementById(
+            "trekFormContainer"
+        ).hidden =
+            false;
+
+
+        document.getElementById(
+            "trekFormContainer"
+        ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+
+    } catch (err) {
+
+        console.error(
+            "Unexpected trek edit error:",
+            err
+        );
+
+    }
+}
+
+
+/* ============================================================
+   DELETE TREK
+============================================================ */
+
+async function deleteTrek(id) {
+
+    const confirmed =
+        confirm(
+            "Are you sure you want to permanently delete this trek?"
+        );
+
+
+    if (!confirmed) return;
+
+
+    try {
+
+        const { error } =
+            await supabaseClient
+                .from("treks")
+                .delete()
+                .eq("id", id);
+
+
+        if (error) {
+
+            console.error(
+                "Trek delete error:",
+                error
+            );
+
+            alert(
+                error.message ||
+                "Unable to delete the trek."
+            );
+
+            return;
+        }
+
+
+        alert(
+            "Trek deleted successfully!"
+        );
+
+
+        await loadTreks();
+
+
+    } catch (err) {
+
+        console.error(
+            "Unexpected trek delete error:",
+            err
+        );
+
+        alert(
+            "Something went wrong while deleting the trek."
+        );
+    }
+}
+
+
+/* ============================================================
+   TREK FORM
+============================================================ */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const addButton =
+            document.getElementById(
+                "addTrekBtn"
+            );
+
+
+        const cancelButton =
+            document.getElementById(
+                "cancelTrekBtn"
+            );
+
+
+        const form =
+            document.getElementById(
+                "trekForm"
+            );
+
+
+        /* ====================================================
+           ADD TREK
+        ==================================================== */
+
+        if (addButton) {
+
+            addButton.addEventListener(
+                "click",
+                function () {
+
+                    resetTrekForm();
+
+
+                    const container =
+                        document.getElementById(
+                            "trekFormContainer"
+                        );
+
+
+                    if (container) {
+                        container.hidden = false;
+                    }
+
+                }
+            );
+        }
+
+
+        /* ====================================================
+           CANCEL
+        ==================================================== */
+
+        if (cancelButton) {
+
+            cancelButton.addEventListener(
+                "click",
+                resetTrekForm
+            );
+        }
+
+
+        /* ====================================================
+           SAVE TREK
+        ==================================================== */
+
+        if (form) {
+
+            form.addEventListener(
+                "submit",
+                async function (e) {
+
+                    e.preventDefault();
+
+
+                    const message =
+                        document.getElementById(
+                            "trekFormMessage"
+                        );
+
+
+                    const trekData = {
+
+                        title:
+                            document.getElementById(
+                                "trek-title"
+                            ).value.trim(),
+
+
+                        destination:
+                            document.getElementById(
+                                "trek-destination"
+                            ).value.trim(),
+
+
+                        image_url:
+                            document.getElementById(
+                                "trek-image"
+                            ).value.trim(),
+
+
+                        display_order:
+                            Number(
+                                document.getElementById(
+                                    "trek-order"
+                                ).value
+                            ) || 0,
+
+
+                        is_active:
+                            document.getElementById(
+                                "trek-active"
+                            ).checked,
+
+
+                        updated_at:
+                            new Date().toISOString()
+
+                    };
+
+
+                    /* -----------------------------
+                       VALIDATION
+                    ----------------------------- */
+
+                    if (
+                        !trekData.title ||
+                        !trekData.destination ||
+                        !trekData.image_url
+                    ) {
+
+                        if (message) {
+
+                            message.textContent =
+                                "Please fill in all required fields.";
+
+                            message.className =
+                                "form-error";
+                        }
+
+                        return;
+                    }
+
+
+                    try {
+
+                        let error;
+
+
+                        /* -----------------------------
+                           UPDATE
+                        ----------------------------- */
+
+                        if (editingTrekId) {
+
+                            const result =
+                                await supabaseClient
+                                    .from("treks")
+                                    .update(
+                                        trekData
+                                    )
+                                    .eq(
+                                        "id",
+                                        editingTrekId
+                                    );
+
+
+                            error =
+                                result.error;
+                        }
+
+
+                        /* -----------------------------
+                           INSERT
+                        ----------------------------- */
+
+                        else {
+
+                            const result =
+                                await supabaseClient
+                                    .from("treks")
+                                    .insert([
+                                        trekData
+                                    ]);
+
+
+                            error =
+                                result.error;
+                        }
+
+
+                        if (error) {
+
+                            console.error(
+                                "Trek save error:",
+                                error
+                            );
+
+                            if (message) {
+
+                                message.textContent =
+                                    error.message ||
+                                    "Unable to save trek.";
+
+                                message.className =
+                                    "form-error";
+                            }
+
+                            return;
+                        }
+
+
+                        if (message) {
+
+                            message.textContent =
+                                editingTrekId
+                                    ? "Trek updated successfully!"
+                                    : "Trek added successfully!";
+
+                            message.className =
+                                "form-success";
+                        }
+
+
+                        await loadTreks();
+
+
+                        setTimeout(
+                            function () {
+
+                                resetTrekForm();
+
+                            },
+                            800
+                        );
+
+
+                    } catch (err) {
+
+                        console.error(
+                            "Unexpected trek save error:",
+                            err
+                        );
+
+
+                        if (message) {
+
+                            message.textContent =
+                                "Something went wrong.";
+
+                            message.className =
+                                "form-error";
+                        }
+                    }
+
+                }
+            );
+        }
+
+
+        /* ====================================================
+           EDIT / DELETE
+        ==================================================== */
+
+        document.addEventListener(
+            "click",
+            function (e) {
+
+                /* EDIT */
+
+                const editButton =
+                    e.target.closest(
+                        "[data-edit-trek]"
+                    );
+
+
+                if (editButton) {
+
+                    editTrek(
+                        editButton.dataset.editTrek
+                    );
+
+                    return;
+                }
+
+
+                /* DELETE */
+
+                const deleteButton =
+                    e.target.closest(
+                        "[data-delete-trek]"
+                    );
+
+
+                if (deleteButton) {
+
+                    const trekId =
+                        deleteButton.getAttribute(
+                            "data-delete-trek"
+                        );
+
+
+                    console.log(
+                        "Deleting trek ID:",
+                        trekId
+                    );
+
+
+                    if (!trekId) {
+
+                        alert(
+                            "Trek ID is missing."
+                        );
+
+                        return;
+                    }
+
+
+                    deleteTrek(
+                        trekId
+                    );
+
+                    return;
+                }
+
+            }
+        );
+
+
+        /* ====================================================
+           INITIAL LOAD
+        ==================================================== */
+
+        loadTreks();
 
     }
 );
