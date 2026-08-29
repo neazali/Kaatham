@@ -722,3 +722,155 @@ header {
         gap: 14px;
     }
 }
+
+
+/* =========================================================
+   KAATHAM ADMIN — MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- PAGE ---------- */
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .admin-container,
+    .dashboard-container,
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    /* ---------- SIDEBAR ---------- */
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+
+    /* ---------- HEADERS ---------- */
+
+    .packages-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .packages-header h2 {
+        font-size: 1.5rem;
+    }
+
+
+    /* ---------- ADMIN SECTIONS ---------- */
+
+    .admin-section {
+        width: 100%;
+        padding: 20px 15px;
+    }
+
+
+    /* ---------- FORMS ---------- */
+
+    .package-form-container {
+        width: 100%;
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* ---------- FORM ACTIONS ---------- */
+
+    .form-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+
+    /* ---------- PACKAGE CARDS ---------- */
+
+    .package-admin-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .package-admin-card {
+        width: 100%;
+    }
+
+
+    /* ---------- COLLEGE TRIPS ---------- */
+
+    .college-trip-admin-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+
+    /* ---------- BROCHURES ---------- */
+
+    .brochure-admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ---------- BUTTONS ---------- */
+
+    button,
+    .save-package-btn {
+        min-height: 44px;
+    }
+
+
+    /* ---------- TABLES ---------- */
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    /* ---------- MODALS ---------- */
+
+    .modal-panel {
+        width: calc(100% - 24px);
+        max-width: none;
+        max-height: 90vh;
+        overflow-y: auto;
+        margin: 12px;
+        border-radius: 16px;
+    }
+
+
+    /* ---------- IMAGES ---------- */
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+}
