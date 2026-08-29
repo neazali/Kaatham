@@ -1,7 +1,7 @@
 /* ============================================================
-   KAATHAM — STYLE.CSS
-   Organized top to bottom the same way you'd read the page.
-   ============================================================ */
+KAATHAM — STYLE.CSS
+Organized top to bottom the same way you'd read the page.
+============================================================ */
 
 /* ---------- RESET ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -19,8 +19,8 @@ input, textarea, select { font: inherit; }
 }
 
 /* ---------- VARIABLES ----------
-   Palette is drawn straight from the Spiti poster: dusk-blue sky,
-   sun-lit monastery gold, and the brick red of the "Circuit" tag. */
+Palette is drawn straight from the Spiti poster: dusk-blue sky,
+sun-lit monastery gold, and the brick red of the "Circuit" tag. */
 :root {
   /* Core colors */
   --ink: #14181D;              /* near-black, warm charcoal */
@@ -186,8 +186,8 @@ h1, h2, h3 { font-family: var(--font-display); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* =========================================
-   KAATHAM — CINEMATIC TREKKING HERO
-   ========================================= */
+KAATHAM — CINEMATIC TREKKING HERO
+========================================= */
 
 .trek-hero {
   position: relative;
@@ -198,16 +198,15 @@ h1, h2, h3 { font-family: var(--font-display); }
   overflow: hidden;
 
   background:
-    linear-gradient(
-      180deg,
-      rgba(8, 18, 30, 0.15) 0%,
-      rgba(8, 18, 30, 0.25) 35%,
-      rgba(8, 14, 22, 0.82) 100%
-    ),
-    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=85&w=2200&auto=format&fit=crop")
-    center center / cover no-repeat;
+  linear-gradient(
+  180deg,
+  rgba(8, 18, 30, 0.15) 0%,
+  rgba(8, 18, 30, 0.25) 35%,
+  rgba(8, 14, 22, 0.82) 100%
+  ),
+  url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=85&w=2200&auto=format&fit=crop")
+  center center / cover no-repeat;
 }
-
 
 /* Atmospheric mountain haze */
 .trek-hero::before {
@@ -216,16 +215,15 @@ h1, h2, h3 { font-family: var(--font-display); }
   inset: 0;
 
   background:
-    radial-gradient(
-      ellipse at 50% 35%,
-      rgba(255, 220, 170, 0.18) 0%,
-      rgba(255, 220, 170, 0.05) 30%,
-      transparent 65%
-    );
+  radial-gradient(
+  ellipse at 50% 35%,
+  rgba(255, 220, 170, 0.18) 0%,
+  rgba(255, 220, 170, 0.05) 30%,
+  transparent 65%
+  );
 
   pointer-events: none;
 }
-
 
 /* Dark cinematic foreground */
 .trek-hero::after {
@@ -238,19 +236,18 @@ h1, h2, h3 { font-family: var(--font-display); }
   height: 45%;
 
   background:
-    linear-gradient(
-      to top,
-      rgba(6, 12, 18, 0.96),
-      rgba(6, 12, 18, 0)
-    );
+  linear-gradient(
+  to top,
+  rgba(6, 12, 18, 0.96),
+  rgba(6, 12, 18, 0)
+  );
 
   pointer-events: none;
 }
 
-
 /* =========================================
-   HERO CONTENT
-   ========================================= */
+HERO CONTENT
+========================================= */
 
 .trek-hero-content {
   position: relative;
@@ -262,7 +259,6 @@ h1, h2, h3 { font-family: var(--font-display); }
   margin-top: 50px;
 }
 
-
 /* Small heading */
 .trek-hero .eyebrow {
   color: rgba(255, 255, 255, 0.72);
@@ -270,7 +266,6 @@ h1, h2, h3 { font-family: var(--font-display); }
   text-transform: uppercase;
   font-size: 0.78rem;
 }
-
 
 /* Main title */
 .trek-hero .section-title {
@@ -284,9 +279,8 @@ h1, h2, h3 { font-family: var(--font-display); }
   letter-spacing: -0.045em;
 
   text-shadow:
-    0 8px 35px rgba(0, 0, 0, 0.45);
+  0 8px 35px rgba(0, 0, 0, 0.45);
 }
-
 
 /* Subtitle */
 .trek-hero .section-lead {
@@ -298,13 +292,12 @@ h1, h2, h3 { font-family: var(--font-display); }
   margin: 24px auto 0;
 
   text-shadow:
-    0 4px 18px rgba(0, 0, 0, 0.5);
+  0 4px 18px rgba(0, 0, 0, 0.5);
 }
 
-
 /* =========================================
-   SNOW
-   ========================================= */
+SNOW
+========================================= */
 
 .trek-hero .snow-layer {
   position: absolute;
@@ -330,7 +323,6 @@ h1, h2, h3 { font-family: var(--font-display); }
 
   animation: trekSnowFall linear infinite;
 }
-
 
 /* Different snow positions */
 .trek-hero .snow-layer span:nth-child(1) {
@@ -383,31 +375,29 @@ h1, h2, h3 { font-family: var(--font-display); }
   animation-duration: 16s;
 }
 
-
 @keyframes trekSnowFall {
   0% {
     transform: translate3d(0, -20px, 0);
     opacity: 0;
   }
 
-  15% {
-    opacity: 0.8;
-  }
-
-  85% {
-    opacity: 0.6;
-  }
-
-  100% {
-    transform: translate3d(80px, 100vh, 0);
-    opacity: 0;
-  }
+15% {
+  opacity: 0.8;
 }
 
+85% {
+  opacity: 0.6;
+}
+
+100% {
+  transform: translate3d(80px, 100vh, 0);
+  opacity: 0;
+}
+}
 
 /* =========================================
-   TREK SECTION — LIGHT HIMALAYAN
-   ========================================= */
+TREK SECTION — LIGHT HIMALAYAN
+========================================= */
 
 #treks {
   position: relative;
@@ -417,20 +407,19 @@ h1, h2, h3 { font-family: var(--font-display); }
   padding-bottom: 110px;
 
   background:
-    linear-gradient(
-      180deg,
-      #b9d0d8 0%,
-      #dce8ea 16%,
-      #edf3f2 38%,
-      #f5f4ef 65%,
-      #f8f6f1 100%
-    );
+  linear-gradient(
+  180deg,
+  #b9d0d8 0%,
+  #dce8ea 16%,
+  #edf3f2 38%,
+  #f5f4ef 65%,
+  #f8f6f1 100%
+  );
 }
 
-
 /* =========================================
-   HERO → TREK MIST TRANSITION
-   ========================================= */
+HERO → TREK MIST TRANSITION
+========================================= */
 
 #treks::before {
   content: "";
@@ -444,13 +433,13 @@ h1, h2, h3 { font-family: var(--font-display); }
   height: 330px;
 
   background:
-    radial-gradient(
-      ellipse 55% 55% at 50% 55%,
-      rgba(255, 255, 255, 0.98) 0%,
-      rgba(241, 247, 247, 0.90) 35%,
-      rgba(220, 235, 238, 0.58) 58%,
-      rgba(220, 235, 238, 0) 78%
-    );
+  radial-gradient(
+  ellipse 55% 55% at 50% 55%,
+  rgba(255, 255, 255, 0.98) 0%,
+  rgba(241, 247, 247, 0.90) 35%,
+  rgba(220, 235, 238, 0.58) 58%,
+  rgba(220, 235, 238, 0) 78%
+  );
 
   filter: blur(10px);
 
@@ -459,10 +448,9 @@ h1, h2, h3 { font-family: var(--font-display); }
   z-index: 1;
 }
 
-
 /* =========================================
-   LAYERED MOUNTAIN MIST
-   ========================================= */
+LAYERED MOUNTAIN MIST
+========================================= */
 
 #treks::after {
   content: "";
@@ -476,21 +464,21 @@ h1, h2, h3 { font-family: var(--font-display); }
   height: 280px;
 
   background:
-    radial-gradient(
-      ellipse 32% 40% at 18% 50%,
-      rgba(255,255,255,0.75),
-      transparent 72%
-    ),
-    radial-gradient(
-      ellipse 38% 45% at 50% 35%,
-      rgba(255,255,255,0.92),
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 32% 42% at 82% 55%,
-      rgba(255,255,255,0.72),
-      transparent 72%
-    );
+  radial-gradient(
+  ellipse 32% 40% at 18% 50%,
+  rgba(255,255,255,0.75),
+  transparent 72%
+  ),
+  radial-gradient(
+  ellipse 38% 45% at 50% 35%,
+  rgba(255,255,255,0.92),
+  transparent 70%
+  ),
+  radial-gradient(
+  ellipse 32% 42% at 82% 55%,
+  rgba(255,255,255,0.72),
+  transparent 72%
+  );
 
   filter: blur(18px);
 
@@ -499,20 +487,13 @@ h1, h2, h3 { font-family: var(--font-display); }
   z-index: 2;
 }
 
+/* =========================================
+CONTENT ABOVE THE MIST
+========================================= */
 
 /* =========================================
-   CONTENT ABOVE THE MIST
-   ========================================= */
-
-#treks > .container {
-  position: relative;
-  z-index: 4;
-}
-
-
-/* =========================================
-   TREK TYPOGRAPHY
-   ========================================= */
+TREK TYPOGRAPHY
+========================================= */
 
 #treks .eyebrow {
   color: #60777e;
@@ -520,22 +501,19 @@ h1, h2, h3 { font-family: var(--font-display); }
   letter-spacing: 0.18em;
 }
 
-
 #treks .section-title {
   color: #182b32;
 
   text-shadow: none;
 }
 
-
 #treks .section-lead {
   color: #62777d;
 }
 
-
 /* =========================================
-   TREK CARD SPACING
-   ========================================= */
+TREK CARD SPACING
+========================================= */
 
 #treks .dest-grid {
   margin-top: 48px;
@@ -576,62 +554,13 @@ h1, h2, h3 { font-family: var(--font-display); }
   100% { transform: translateY(80vh) translateX(20px); opacity: 0.2; }
 }
 
-/* ---------- TREK CARDS UPGRADE ---------- */
-.dest-card {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-}
-
-.dest-card:hover {
-  transform: translateY(-6px) scale(1.015);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.32);
-}
-
-.dest-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--img) center / cover no-repeat;
-  transition: transform 0.6s ease;
-  z-index: 0;
-}
-
-.dest-card:hover::before {
-  transform: scale(1.08);
-}
-
-.dest-name {
-  position: relative;
-  z-index: 1;
-  transition: color 0.3s ease;
-}
-
-.dest-tag {
-  position: relative;
-  z-index: 1;
-}
-
-.dest-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 55%, transparent 100%);
-  z-index: 0;
-}
+/* =========================================
+KAATHAM — CINEMATIC TREK LANDSCAPE
+========================================= */
 
 /* =========================================
-   KAATHAM — CINEMATIC TREK LANDSCAPE
-   ========================================= */
-
-#treks {
-  position: relative;
-  overflow: hidden;
-}
-
-
-/* =========================================
-   LANDSCAPE CONTAINER
-   ========================================= */
+LANDSCAPE CONTAINER
+========================================= */
 
 .kaatham-trek-scene {
   position: absolute;
@@ -649,7 +578,6 @@ h1, h2, h3 { font-family: var(--font-display); }
   z-index: 1;
 }
 
-
 /* Keep your actual trek content above everything */
 
 #treks > .container {
@@ -658,10 +586,9 @@ h1, h2, h3 { font-family: var(--font-display); }
   z-index: 20;
 }
 
-
 /* =========================================
-   FAR MOUNTAINS
-   ========================================= */
+FAR MOUNTAINS
+========================================= */
 
 .kaatham-mountain {
   position: absolute;
@@ -679,22 +606,19 @@ h1, h2, h3 { font-family: var(--font-display); }
   transform-origin: bottom center;
 }
 
-
 .kaatham-mountain path {
   fill: #a8c0c5;
 }
-
 
 .mountain-far {
   opacity: 0.24;
 
   animation:
-    mountainFloatFar
-    25s
-    ease-in-out
-    infinite alternate;
+  mountainFloatFar
+  25s
+  ease-in-out
+  infinite alternate;
 }
-
 
 .mountain-near {
   height: 40%;
@@ -702,12 +626,11 @@ h1, h2, h3 { font-family: var(--font-display); }
   opacity: 0.14;
 
   animation:
-    mountainFloatNear
-    18s
-    ease-in-out
-    infinite alternate;
+  mountainFloatNear
+  18s
+  ease-in-out
+  infinite alternate;
 }
-
 
 @keyframes mountainFloatFar {
 
@@ -715,12 +638,11 @@ h1, h2, h3 { font-family: var(--font-display); }
     transform: translateX(-1%);
   }
 
-  100% {
-    transform: translateX(1%);
-  }
-
+100% {
+  transform: translateX(1%);
 }
 
+}
 
 @keyframes mountainFloatNear {
 
@@ -728,16 +650,15 @@ h1, h2, h3 { font-family: var(--font-display); }
     transform: translateX(1%);
   }
 
-  100% {
-    transform: translateX(-1.5%);
-  }
+100% {
+  transform: translateX(-1.5%);
+}
 
 }
 
-
 /* =========================================
-   RIDGE
-   ========================================= */
+RIDGE
+========================================= */
 
 .kaatham-ridge {
   position: absolute;
@@ -753,17 +674,15 @@ h1, h2, h3 { font-family: var(--font-display); }
   opacity: 0.22;
 
   animation:
-    ridgeMove
-    16s
-    ease-in-out
-    infinite alternate;
+  ridgeMove
+  16s
+  ease-in-out
+  infinite alternate;
 }
-
 
 .kaatham-ridge path {
   fill: #66828a;
 }
-
 
 @keyframes ridgeMove {
 
@@ -771,16 +690,15 @@ h1, h2, h3 { font-family: var(--font-display); }
     transform: translateX(-0.8%);
   }
 
-  100% {
-    transform: translateX(0.8%);
-  }
+100% {
+  transform: translateX(0.8%);
+}
 
 }
 
-
 /* =========================================
-   MIST
-   ========================================= */
+MIST
+========================================= */
 
 .kaatham-mist {
   position: absolute;
@@ -791,30 +709,28 @@ h1, h2, h3 { font-family: var(--font-display); }
   border-radius: 50%;
 
   background:
-    radial-gradient(
-      ellipse,
-      rgba(255,255,255,0.72) 0%,
-      rgba(255,255,255,0.35) 40%,
-      rgba(255,255,255,0) 75%
-    );
+  radial-gradient(
+  ellipse,
+  rgba(255,255,255,0.72) 0%,
+  rgba(255,255,255,0.35) 40%,
+  rgba(255,255,255,0) 75%
+  );
 
   filter: blur(20px);
 
   z-index: 8;
 }
 
-
 .mist-a {
   top: 24%;
   left: -25%;
 
   animation:
-    mistMoveOne
-    24s
-    ease-in-out
-    infinite alternate;
+  mistMoveOne
+  24s
+  ease-in-out
+  infinite alternate;
 }
-
 
 .mist-b {
   top: 43%;
@@ -823,12 +739,11 @@ h1, h2, h3 { font-family: var(--font-display); }
   opacity: 0.55;
 
   animation:
-    mistMoveTwo
-    30s
-    ease-in-out
-    infinite alternate;
+  mistMoveTwo
+  30s
+  ease-in-out
+  infinite alternate;
 }
-
 
 @keyframes mistMoveOne {
 
@@ -836,12 +751,11 @@ h1, h2, h3 { font-family: var(--font-display); }
     transform: translateX(0);
   }
 
-  100% {
-    transform: translateX(55vw);
-  }
-
+100% {
+  transform: translateX(55vw);
 }
 
+}
 
 @keyframes mistMoveTwo {
 
@@ -849,16 +763,15 @@ h1, h2, h3 { font-family: var(--font-display); }
     transform: translateX(0);
   }
 
-  100% {
-    transform: translateX(-50vw);
-  }
+100% {
+  transform: translateX(-50vw);
+}
 
 }
 
-
 /* =========================================
-   HIKER
-   ========================================= */
+HIKER
+========================================= */
 
 .kaatham-hiker {
   position: absolute;
@@ -875,12 +788,11 @@ h1, h2, h3 { font-family: var(--font-display); }
   opacity: 0.30;
 
   animation:
-    hikerJourney
-    32s
-    linear
-    infinite;
+  hikerJourney
+  32s
+  linear
+  infinite;
 }
-
 
 @keyframes hikerJourney {
 
@@ -889,29 +801,28 @@ h1, h2, h3 { font-family: var(--font-display); }
     transform: translateY(0);
   }
 
-  25% {
-    transform: translateY(-3px);
-  }
+25% {
+  transform: translateY(-3px);
+}
 
-  50% {
-    transform: translateY(0);
-  }
+50% {
+  transform: translateY(0);
+}
 
-  75% {
-    transform: translateY(-3px);
-  }
+75% {
+  transform: translateY(-3px);
+}
 
-  100% {
-    left: calc(100% + 90px);
-    transform: translateY(0);
-  }
+100% {
+  left: calc(100% + 90px);
+  transform: translateY(0);
+}
 
 }
 
-
 /* =========================================
-   HIKER HEAD
-   ========================================= */
+HIKER HEAD
+========================================= */
 
 .hiker-head {
   position: absolute;
@@ -927,10 +838,9 @@ h1, h2, h3 { font-family: var(--font-display); }
   background: #29434b;
 }
 
-
 /* =========================================
-   HIKER BODY
-   ========================================= */
+HIKER BODY
+========================================= */
 
 .hiker-body {
   position: absolute;
@@ -948,10 +858,9 @@ h1, h2, h3 { font-family: var(--font-display); }
   transform: rotate(-8deg);
 }
 
-
 /* =========================================
-   BACKPACK
-   ========================================= */
+BACKPACK
+========================================= */
 
 .hiker-backpack {
   position: absolute;
@@ -969,10 +878,9 @@ h1, h2, h3 { font-family: var(--font-display); }
   opacity: 0.9;
 }
 
-
 /* =========================================
-   ARM
-   ========================================= */
+ARM
+========================================= */
 
 .hiker-arm {
   position: absolute;
@@ -988,15 +896,14 @@ h1, h2, h3 { font-family: var(--font-display); }
   background: #29434b;
 
   transform:
-    rotate(25deg);
+  rotate(25deg);
 
   transform-origin: top center;
 }
 
-
 /* =========================================
-   LEGS
-   ========================================= */
+LEGS
+========================================= */
 
 .hiker-leg {
   position: absolute;
@@ -1014,26 +921,23 @@ h1, h2, h3 { font-family: var(--font-display); }
   transform-origin: top center;
 }
 
-
 .hiker-leg-one {
   animation:
-    walkingLegOne
-    0.8s
-    ease-in-out
-    infinite alternate;
+  walkingLegOne
+  0.8s
+  ease-in-out
+  infinite alternate;
 }
-
 
 .hiker-leg-two {
   left: 25px;
 
   animation:
-    walkingLegTwo
-    0.8s
-    ease-in-out
-    infinite alternate;
+  walkingLegTwo
+  0.8s
+  ease-in-out
+  infinite alternate;
 }
-
 
 @keyframes walkingLegOne {
 
@@ -1041,12 +945,11 @@ h1, h2, h3 { font-family: var(--font-display); }
     transform: rotate(25deg);
   }
 
-  to {
-    transform: rotate(-22deg);
-  }
-
+to {
+  transform: rotate(-22deg);
 }
 
+}
 
 @keyframes walkingLegTwo {
 
@@ -1054,16 +957,15 @@ h1, h2, h3 { font-family: var(--font-display); }
     transform: rotate(-22deg);
   }
 
-  to {
-    transform: rotate(25deg);
-  }
+to {
+  transform: rotate(25deg);
+}
 
 }
 
-
 /* =========================================
-   TREKKING POLE
-   ========================================= */
+TREKKING POLE
+========================================= */
 
 .hiker-stick {
   position: absolute;
@@ -1077,13 +979,10 @@ h1, h2, h3 { font-family: var(--font-display); }
   background: #29434b;
 
   transform:
-    rotate(-12deg);
+  rotate(-12deg);
 
   transform-origin: top;
 }
-
-
-
 
 /* ---------- HERO ---------- */
 .hero {
@@ -1131,21 +1030,78 @@ h1, h2, h3 { font-family: var(--font-display); }
   gap: 18px;
 }
 .dest-card {
-  position: relative; border-radius: var(--radius); overflow: hidden;
-  aspect-ratio: 3/4; background: var(--img) center/cover no-repeat, var(--dusk);
-  display: flex; flex-direction: column; justify-content: flex-end; padding: 22px;
-  transition: transform 0.5s var(--ease);
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: var(--dusk);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
+
 .dest-card::before {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.75) 100%);
-  transition: opacity 0.4s ease;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--img) center / cover no-repeat;
+  transition: transform 0.6s ease;
+  z-index: 0;
 }
-.dest-card:hover { transform: translateY(-6px); }
-.dest-card--lg { grid-column: span 2; grid-row: span 2; }
-.dest-name { position: relative; font-family: var(--font-display); color: var(--bone); font-size: 1.4rem; font-weight: 500; }
-.dest-card--lg .dest-name { font-size: 2.1rem; }
-.dest-tag { position: relative; color: var(--gold-light); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px; }
+
+.dest-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+  to top,
+  rgba(0, 0, 0, 0.65) 0%,
+  rgba(0, 0, 0, 0.1) 55%,
+  transparent 100%
+  );
+  z-index: 0;
+}
+
+.dest-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+}
+
+.dest-card:hover::before {
+  transform: scale(1.08);
+}
+
+.dest-card--lg {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.dest-name {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  color: var(--bone);
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.dest-card--lg .dest-name {
+  font-size: 2.1rem;
+}
+
+.dest-tag {
+  position: relative;
+  z-index: 1;
+  color: var(--gold-light);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
 
 /* ---------- FEATURED TRIP ---------- */
 .featured { background: var(--dusk); color: var(--bone); }
@@ -1213,170 +1169,167 @@ h1, h2, h3 { font-family: var(--font-display); }
 /* ============ DESTINATION BROCHURES ============ */
 
 .brochure-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 42px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 42px;
 }
 
 .brochure-card {
-    position: relative;
-    min-height: 390px;
-    overflow: hidden;
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
 
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 
-    padding: 28px;
+  padding: 28px;
 
-    border-radius: 22px;
+  border-radius: 22px;
 
-    background-size: cover;
-    background-position: center;
+  background-size: cover;
+  background-position: center;
 
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.14);
+  box-shadow:
+  0 15px 40px rgba(0, 0, 0, 0.14);
 
-    transition:
-        transform 0.45s ease,
-        box-shadow 0.45s ease;
+  transition:
+  transform 0.45s ease,
+  box-shadow 0.45s ease;
 }
 
 .brochure-card:hover {
-    transform: translateY(-8px);
+  transform: translateY(-8px);
 
-    box-shadow:
-        0 25px 55px rgba(0, 0, 0, 0.22);
+  box-shadow:
+  0 25px 55px rgba(0, 0, 0, 0.22);
 }
 
 .brochure-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 
 .brochure-label {
-    display: inline-block;
+  display: inline-block;
 
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
 
-    color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .brochure-card h3 {
-    margin: 0 0 20px;
+  margin: 0 0 20px;
 
-    color: #fff;
+  color: #fff;
 
-    font-size: 27px;
-    line-height: 1.2;
+  font-size: 27px;
+  line-height: 1.2;
 }
 
 .brochure-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 
-    padding: 11px 17px;
+  padding: 11px 17px;
 
-    border-radius: 9px;
+  border-radius: 9px;
 
-    background: #fff;
-    color: #111;
+  background: #fff;
+  color: #111;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    font-size: 13px;
-    font-weight: 700;
+  font-size: 13px;
+  font-weight: 700;
 
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+  transition:
+  transform 0.25s ease,
+  background 0.25s ease;
 }
 
 .brochure-btn:hover {
-    transform: translateX(4px);
-    background: #f3f3f3;
+  transform: translateX(4px);
+  background: #f3f3f3;
 }
 
 @media (max-width: 900px) {
-    .brochure-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .brochure-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
-    .brochure-grid {
-        grid-template-columns: 1fr;
-    }
+  .brochure-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .brochure-card {
-        min-height: 350px;
-    }
+.brochure-card {
+  min-height: 350px;
+}
 
-    .brochure-card h3 {
-        font-size: 24px;
-    }
+.brochure-card h3 {
+  font-size: 24px;
+}
 }
 
 /* =================================
-   TRAVEL BROCHURES SECTION
-================================= */
-/* =================================
-   TRAVEL BROCHURES SECTION
+TRAVEL BROCHURES SECTION
 ================================= */
 
 .brochures-section {
-    position: relative;
+  position: relative;
 
-    margin-top: 110px;
-    padding: 85px 0 100px;
+  margin-top: 110px;
+  padding: 85px 0 100px;
 
-    background: #fff;
+  background: #fff;
 
-    border-radius: 0;
+  border-radius: 0;
 
-    box-shadow: none;
+  box-shadow: none;
 }
 
 /* Elegant section divider */
 
 .brochures-section::before {
-    content: "";
+  content: "";
 
-    position: absolute;
-    top: -32px;
-    left: 50%;
+  position: absolute;
+  top: -32px;
+  left: 50%;
 
-    transform: translateX(-50%);
+  transform: translateX(-50%);
 
-    width: 90px;
-    height: 1px;
+  width: 90px;
+  height: 1px;
 
-    background: rgba(20, 24, 29, 0.25);
+  background: rgba(20, 24, 29, 0.25);
 }
 
 /* Small centre accent */
 
 .brochures-section::after {
-    content: "";
+  content: "";
 
-    position: absolute;
-    top: -35px;
-    left: 50%;
+  position: absolute;
+  top: -35px;
+  left: 50%;
 
-    transform: translateX(-50%);
+  transform: translateX(-50%);
 
-    width: 7px;
-    height: 7px;
+  width: 7px;
+  height: 7px;
 
-    background: #14181d;
+  background: #14181d;
 
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 /* ---------- CINEMATIC ---------- */
@@ -1464,9 +1417,9 @@ h1, h2, h3 { font-family: var(--font-display); }
 .testi-dots button.active { background: var(--gold); transform: scale(1.2); }
 
 /* ---------- TRAVELLERS' EXPERIENCES (masonry gallery) ----------
-   Uses CSS columns for a Pinterest-style layout — no JS needed to
-   lay the grid out. Each figure just needs `break-inside: avoid` so
-   a photo never gets split across two columns. */
+Uses CSS columns for a Pinterest-style layout — no JS needed to
+lay the grid out. Each figure just needs `break-inside: avoid` so
+a photo never gets split across two columns. */
 .masonry {
   margin-top: 52px;
   column-count: 4;
@@ -1614,32 +1567,32 @@ h1, h2, h3 { font-family: var(--font-display); }
 
 /* -----INSTAGRAM FLOAT ----------*/
 .instagram-float {
-    position: fixed;
-    right: 20px;
-    bottom: 90px;
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
 
-    width: 48px;
-    height: 48px;
+  width: 48px;
+  height: 48px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    background: transparent;
-    box-shadow: none;
+  background: transparent;
+  box-shadow: none;
 
-    text-decoration: none;
-    z-index: 9999;
+  text-decoration: none;
+  z-index: 9999;
 }
 
 .instagram-float svg {
-    width: 45px;
-    height: 45px;
+  width: 45px;
+  height: 45px;
 }
 
 /* ============================================================
-   RESPONSIVE
-   ============================================================ */
+RESPONSIVE
+============================================================ */
 @media (max-width: 1024px) {
   .dest-grid { grid-template-columns: repeat(3, 1fr); }
   .pkg-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1652,15 +1605,15 @@ h1, h2, h3 { font-family: var(--font-display); }
 }
 
 /* ============================================================
-   KAATHAM — COMPLETE MOBILE REDESIGN
-   Applies only below 768px
-   ============================================================ */
+KAATHAM — COMPLETE MOBILE REDESIGN
+Applies only below 768px
+============================================================ */
 
 @media (max-width: 768px) {
 
   /* ==========================================================
-     GLOBAL
-     ========================================================== */
+  GLOBAL
+  ========================================================== */
 
   html,
   body {
@@ -1669,205 +1622,200 @@ h1, h2, h3 { font-family: var(--font-display); }
     overflow-x: hidden;
   }
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  .container {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 18px;
-    padding-right: 18px;
-  }
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 18px;
+  padding-right: 18px;
+}
 
-  .section {
-    padding: 58px 0;
-  }
+.section {
+  padding: 58px 0;
+}
 
-  .section-title {
-    font-size: clamp(1.75rem, 8vw, 2.35rem);
-    line-height: 1.08;
-    margin-bottom: 12px;
-  }
+.section-title {
+  font-size: clamp(1.75rem, 8vw, 2.35rem);
+  line-height: 1.08;
+  margin-bottom: 12px;
+}
 
-  .section-lead {
-    font-size: 0.92rem;
-    line-height: 1.55;
-    max-width: 100%;
-  }
+.section-lead {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  max-width: 100%;
+}
 
+/* ==========================================================
+NAVBAR
+========================================================== */
 
-  /* ==========================================================
-     NAVBAR
-     ========================================================== */
+.navbar {
+  height: 64px;
+  padding: 0 18px;
+}
 
-  .navbar {
-    height: 64px;
-    padding: 0 18px;
-  }
+.brand-logo {
+  height: 44px;
+  width: auto;
+}
 
-  .brand-logo {
-    height: 44px;
-    width: auto;
-  }
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(82vw, 320px);
+  height: 100vh;
 
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: min(82vw, 320px);
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  padding: 90px 28px 30px;
+  gap: 22px;
 
-    padding: 90px 28px 30px;
-    gap: 22px;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
 
-    transform: translateX(100%);
-    transition: transform 0.35s ease;
+  z-index: 999;
+}
 
-    z-index: 999;
-  }
+.nav-links.open {
+  transform: translateX(0);
+}
 
-  .nav-links.open {
-    transform: translateX(0);
-  }
+.nav-links a {
+  font-size: 0.95rem;
+}
 
-  .nav-links a {
-    font-size: 0.95rem;
-  }
+.nav-cta {
+  margin: 8px 0 0;
+}
 
-  .nav-cta {
-    margin: 8px 0 0;
-  }
+.hamburger {
+  display: flex;
+  z-index: 1000;
+}
 
-  .hamburger {
-    display: flex;
-    z-index: 1000;
-  }
+/* ==========================================================
+HERO
+========================================================== */
 
+.hero {
+  min-height: 78vh;
+  height: auto;
+}
 
-  /* ==========================================================
-     HERO
-     ========================================================== */
+.hero-content {
+  width: 100%;
+  padding: 70px 18px 50px;
+}
 
-  .hero {
-    min-height: 78vh;
-    height: auto;
-  }
+.hero-logo {
+  width: 76px;
+  height: 76px;
+  margin-bottom: 14px;
+}
 
-  .hero-content {
-    width: 100%;
-    padding: 70px 18px 50px;
-  }
+.hero-title {
+  font-size: clamp(2.2rem, 11vw, 3.3rem);
+  line-height: 0.98;
+  max-width: 100%;
+}
 
-  .hero-logo {
-    width: 76px;
-    height: 76px;
-    margin-bottom: 14px;
-  }
+.hero-sub {
+  max-width: 34ch;
+  margin: 16px auto 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
 
-  .hero-title {
-    font-size: clamp(2.2rem, 11vw, 3.3rem);
-    line-height: 0.98;
-    max-width: 100%;
-  }
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 22px;
+}
 
-  .hero-sub {
-    max-width: 34ch;
-    margin: 16px auto 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
+.hero-actions .btn {
+  width: 100%;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 11px 18px;
+  font-size: 0.82rem;
+}
 
-  .hero-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    margin-top: 22px;
-  }
+/* ==========================================================
+TREK HERO
+========================================================== */
 
-  .hero-actions .btn {
-    width: 100%;
-    max-width: 340px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 11px 18px;
-    font-size: 0.82rem;
-  }
+.trek-hero {
+  min-height: 72vh;
+}
 
+.trek-hero-content {
+  width: 100%;
+  padding: 70px 18px 40px;
+}
 
-  /* ==========================================================
-     TREK HERO
-     ========================================================== */
+.trek-hero .section-title {
+  font-size: clamp(2.8rem, 15vw, 4.5rem);
+  line-height: 0.95;
+}
 
-  .trek-hero {
-    min-height: 72vh;
-  }
+.trek-hero .section-lead {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
 
-  .trek-hero-content {
-    width: 100%;
-    padding: 70px 18px 40px;
-  }
+/* ==========================================================
+DESTINATIONS
+========================================================== */
 
-  .trek-hero .section-title {
-    font-size: clamp(2.8rem, 15vw, 4.5rem);
-    line-height: 0.95;
-  }
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 28px;
+}
 
-  .trek-hero .section-lead {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
+.dest-card {
+  min-width: 0;
+  aspect-ratio: 0.82;
+  padding: 14px;
+  border-radius: 12px;
+}
 
+.dest-card--lg {
+  grid-column: span 2;
+  grid-row: span 1;
+  aspect-ratio: 1.65;
+}
 
-  /* ==========================================================
-     DESTINATIONS
-     ========================================================== */
+.dest-name {
+  font-size: 1rem;
+  line-height: 1.05;
+}
 
-  .dest-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    margin-top: 28px;
-  }
+.dest-card--lg .dest-name {
+  font-size: 1.35rem;
+}
 
-  .dest-card {
-    min-width: 0;
-    aspect-ratio: 0.82;
-    padding: 14px;
-    border-radius: 12px;
-  }
+.dest-tag {
+  font-size: 0.62rem;
+  padding: 4px 7px;
+}
 
-  .dest-card--lg {
-    grid-column: span 2;
-    grid-row: span 1;
-    aspect-ratio: 1.65;
-  }
-
-  .dest-name {
-    font-size: 1rem;
-    line-height: 1.05;
-  }
-
-  .dest-card--lg .dest-name {
-    font-size: 1.35rem;
-  }
-
-  .dest-tag {
-    font-size: 0.62rem;
-    padding: 4px 7px;
-  }
-
-
-  /* ==========================================================
-   FEATURED TRIP — MOBILE
-   ========================================================== */
+/* ==========================================================
+FEATURED TRIP — MOBILE
+========================================================== */
 
 .featured {
   padding: 38px 0;
@@ -1966,11 +1914,11 @@ h1, h2, h3 { font-family: var(--font-display); }
   font-weight: 600;
 }
 
-  /* ==========================================================
-     PACKAGES
-     ========================================================== */
+/* ==========================================================
+PACKAGES
+========================================================== */
 
-  /* ---------- PACKAGES — MOBILE HORIZONTAL SWIPE ---------- */
+/* ---------- PACKAGES — MOBILE HORIZONTAL SWIPE ---------- */
 
 .pkg-grid {
   display: flex;
@@ -2039,414 +1987,638 @@ h1, h2, h3 { font-family: var(--font-display); }
   font-size: 0.78rem;
 }
 
-  /* ==========================================================
-     BROCHURES
-     ========================================================== */
+/* ==========================================================
+BROCHURES
+========================================================== */
 
-  .brochure-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 26px;
-  }
+.brochure-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 26px;
+}
 
-  .brochure-card {
-    min-height: 230px;
-    padding: 20px;
-    border-radius: 14px;
-  }
+.brochure-card {
+  min-height: 230px;
+  padding: 20px;
+  border-radius: 14px;
+}
 
-  .brochure-card h3 {
-    font-size: 1.25rem;
-    line-height: 1.15;
-  }
+.brochure-card h3 {
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
 
+/* ==========================================================
+CINEMATIC
+========================================================== */
 
-  /* ==========================================================
-     CINEMATIC
-     ========================================================== */
+.cinematic {
+  min-height: 55vh;
+  padding: 76px 18px;
+  background-attachment: scroll;
+}
 
-  .cinematic {
-    min-height: 55vh;
-    padding: 76px 18px;
-    background-attachment: scroll;
-  }
+.cinematic-line {
+  font-size: clamp(1.35rem, 6vw, 1.8rem);
+  line-height: 1.2;
+}
 
-  .cinematic-line {
-    font-size: clamp(1.35rem, 6vw, 1.8rem);
-    line-height: 1.2;
-  }
+/* ==========================================================
+EXPERIENCES
+========================================================== */
 
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 28px;
+}
 
-  /* ==========================================================
-     EXPERIENCES
-     ========================================================== */
+.exp-card {
+  min-width: 0;
+  padding: 20px 10px;
+  border-radius: 12px;
+}
 
-  .exp-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    margin-top: 28px;
-  }
+.exp-icon {
+  font-size: 1.45rem;
+  margin-bottom: 8px;
+}
 
-  .exp-card {
-    min-width: 0;
-    padding: 20px 10px;
-    border-radius: 12px;
-  }
+.exp-card h3 {
+  font-size: 0.82rem;
+}
 
-  .exp-icon {
-    font-size: 1.45rem;
-    margin-bottom: 8px;
-  }
+.exp-card p {
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
 
-  .exp-card h3 {
-    font-size: 0.82rem;
-  }
+/* ==========================================================
+WHY KAATHAM
+========================================================== */
 
-  .exp-card p {
-    font-size: 0.7rem;
-    line-height: 1.4;
-  }
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 28px;
+}
 
+.why-card {
+  padding: 20px;
+  border-radius: 12px;
+}
 
-  /* ==========================================================
-     WHY KAATHAM
-     ========================================================== */
+.why-card h3 {
+  font-size: 1rem;
+}
 
-  .why-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-top: 28px;
-  }
+.why-card p {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
 
-  .why-card {
-    padding: 20px;
-    border-radius: 12px;
-  }
+/* ==========================================================
+HOW IT WORKS
+========================================================== */
 
-  .why-card h3 {
-    font-size: 1rem;
-  }
+.timeline {
+  margin-top: 28px;
+}
 
-  .why-card p {
-    font-size: 0.82rem;
-    line-height: 1.5;
-  }
+.timeline li {
+  gap: 12px;
+  padding: 17px 0;
+}
 
+.tl-num {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  font-size: 1rem;
+}
 
-  /* ==========================================================
-     HOW IT WORKS
-     ========================================================== */
+.timeline h3 {
+  font-size: 0.95rem;
+}
 
-  .timeline {
-    margin-top: 28px;
-  }
+.timeline p {
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
 
-  .timeline li {
-    gap: 12px;
-    padding: 17px 0;
-  }
+/* ==========================================================
+ABOUT
+========================================================== */
 
-  .tl-num {
-    flex: 0 0 34px;
-    width: 34px;
-    height: 34px;
-    font-size: 1rem;
-  }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
 
-  .timeline h3 {
-    font-size: 0.95rem;
-  }
+.about-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+}
 
-  .timeline p {
-    font-size: 0.78rem;
-    line-height: 1.45;
-  }
+.about-content p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
 
+/* ==========================================================
+   INDIA MAP — KAATHAM PREMIUM DESIGN
+========================================================== */
 
-  /* ==========================================================
-     ABOUT
-     ========================================================== */
+.india-map {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255, 255, 255, 0.9),
+            transparent 65%
+        );
+}
 
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
+.india-map .container {
+    position: relative;
+    z-index: 2;
+}
 
-  .about-media {
+.map-wrap {
+    position: relative;
+    width: min(100%, 760px);
+    min-height: 620px;
+    margin: 55px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------- MAP ---------- */
+
+.india-map-graphic {
+    position: relative;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    border-radius: 12px;
-  }
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-  .about-content p {
-    font-size: 0.88rem;
-    line-height: 1.55;
-  }
-
-
-  /* ==========================================================
-     INDIA MAP
-     ========================================================== */
-
-  .map-wrap {
-    width: 100%;
-    max-width: 300px;
-    margin: 28px auto 0;
-  }
-
-  .map-wrap svg,
-  .india-map {
-    width: 100%;
-    height: auto;
-  }
-
-  .map-pin {
-    font-size: 0.58rem;
-    padding: 4px 7px;
-  }
-
-
-  /* ==========================================================
-     STATS
-     ========================================================== */
-
-  .stats {
-    padding: 50px 0;
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 26px 8px;
-  }
-
-  .stat-num {
-    font-size: 2rem;
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.68rem;
-    line-height: 1.3;
-  }
-
-
-  /* ==========================================================
-     TESTIMONIALS
-     ========================================================== */
-
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .testi-card {
-    padding: 22px 18px;
-    border-radius: 12px;
-  }
-
-  .testi-card p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  .testi-card .author {
-    font-size: 0.76rem;
-  }
-
-
-  /* ==========================================================
-     GALLERY
-     ========================================================== */
-
-  .masonry {
-    column-count: 2;
-    column-gap: 8px;
-    margin-top: 28px;
-  }
-
-  .gallery-item {
-    margin-bottom: 8px;
-    border-radius: 9px;
-    break-inside: avoid;
-  }
-
-  .gallery-item img {
+.india-map-image {
     width: 100%;
     height: auto;
     display: block;
-  }
-
-  .gallery-item figcaption {
-    opacity: 1;
-    padding: 10px;
-    background: linear-gradient(
-      180deg,
-      transparent 45%,
-      rgba(20, 24, 29, 0.9) 100%
-    );
-  }
-
-  .gi-review {
-    font-size: 0.68rem;
-  }
-
-
-  /* ==========================================================
-     LIGHTBOX
-     ========================================================== */
-
-  .lightbox {
-    padding: 10px;
-  }
-
-  .lightbox img {
-    max-width: 94vw;
-    max-height: 78vh;
     object-fit: contain;
-  }
 
-  .lightbox-nav {
-    width: 38px;
-    height: 38px;
-    font-size: 1.25rem;
-  }
+    filter:
+        drop-shadow(0 20px 35px rgba(0, 0, 0, 0.08));
 
-  .lightbox-prev {
-    left: 7px;
-  }
+    transform: scale(1.08);
+    transition: transform 0.5s ease;
+}
 
-  .lightbox-next {
-    right: 7px;
-  }
+.india-map-image:hover {
+    transform: scale(1.1);
+}
 
-  .lightbox-close {
-    top: 12px;
-    right: 12px;
-    font-size: 1.5rem;
-  }
+/* ---------- DESTINATION PINS ---------- */
 
+.map-pin {
+    position: absolute;
 
-  /* ==========================================================
-     MALAYALAM
-     ========================================================== */
+    display: flex;
+    align-items: center;
+    gap: 7px;
 
-  .mal-text {
-    font-size: clamp(1.15rem, 5vw, 1.5rem);
-    line-height: 1.5;
-  }
+    border: 0;
+    background: transparent;
 
-  .mal-sub {
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    padding: 5px 8px;
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 5;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Pin dot */
+
+.map-pin::before {
+    content: "";
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 0 5px rgba(0, 0, 0, 0.04),
+        0 0 18px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Pulse ring */
+
+.map-pin::after {
+    content: "";
+
+    position: absolute;
+
+    left: 8px;
+    top: 50%;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--accent);
+
+    transform: translateY(-50%);
+    opacity: 0;
+
+    animation: mapPulse 2.5s infinite;
+}
+
+.map-pin:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+.map-pin:hover::before {
+    transform: scale(1.25);
+
+    box-shadow:
+        0 0 0 7px rgba(0, 0, 0, 0.04),
+        0 0 25px rgba(0, 0, 0, 0.18);
+}
+
+@keyframes mapPulse {
+
+    0% {
+        transform: translateY(-50%) scale(1);
+        opacity: 0.7;
+    }
+
+    70% {
+        transform: translateY(-50%) scale(2.2);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ---------- TOOLTIP ---------- */
+
+.map-tooltip {
+    position: absolute;
+
+    width: min(260px, 80vw);
+
+    padding: 18px 20px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.14);
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    animation: mapTooltipIn 0.25s ease;
+}
+
+.map-tooltip strong {
+    display: block;
+
+    font-size: 1rem;
+
+    margin-bottom: 6px;
+}
+
+.map-tooltip p {
+    margin: 0;
+
     font-size: 0.82rem;
-    line-height: 1.5;
-  }
 
+    line-height: 1.6;
 
-  /* ==========================================================
-     INSTAGRAM
-     ========================================================== */
+    color: var(--muted);
+}
 
-  .insta-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
-    margin-top: 26px;
-  }
+@keyframes mapTooltipIn {
 
-  .insta-grid img {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-  }
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
 
-
-  /* ==========================================================
-     FINAL CTA
-     ========================================================== */
-
-  .final-cta {
-    padding: 70px 18px;
-    background-attachment: scroll;
-  }
-
-  .final-cta h2 {
-    font-size: clamp(1.9rem, 9vw, 2.5rem);
-    line-height: 1.05;
-  }
-
-  .final-cta p {
-    font-size: 0.88rem;
-    line-height: 1.5;
-  }
-
-  .final-cta .hero-actions {
-    margin-top: 20px;
-  }
-
-
-  /* ==========================================================
-     BUTTONS
-     ========================================================== */
-
-  .btn {
-    min-height: 42px;
-    padding: 10px 18px;
-    font-size: 0.8rem;
-    border-radius: 8px;
-  }
-
-  .btn-full {
-    width: 100%;
-  }
-
-
-  /* ==========================================================
-     FORMS / ENQUIRY
-     ========================================================== */
-
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .enquiry-form {
-    padding: 20px;
-  }
-
-
-  /* ==========================================================
-     MODAL
-     ========================================================== */
-
-  .modal-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .modal-panel {
-    padding: 24px 18px;
-  }
-
-
-  /* ==========================================================
-     WHATSAPP
-     ========================================================== */
-
-  .whatsapp-fab {
-    width: 50px;
-    height: 50px;
-    right: 16px;
-    bottom: 16px;
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .map-wrap {
+        min-height: 500px;
+        margin-top: 35px;
+    }
+
+    .map-wrap svg {
+        max-width: 360px;
+        transform: scale(1);
+    }
+
+    .map-pin {
+        font-size: 0.62rem;
+        padding: 4px 5px;
+        gap: 4px;
+    }
+
+    .map-pin::before,
+    .map-pin::after {
+        width: 8px;
+        height: 8px;
+    }
+
+    .map-tooltip {
+        width: 220px;
+        padding: 14px 16px;
+    }
+
+}
+
+
+/* ==========================================================
+STATS
+========================================================== */
+
+.stats {
+  padding: 50px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 8px;
+}
+
+.stat-num {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.68rem;
+  line-height: 1.3;
+}
+
+/* ==========================================================
+TESTIMONIALS
+========================================================== */
+
+.testimonials-grid {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.testi-card {
+  padding: 22px 18px;
+  border-radius: 12px;
+}
+
+.testi-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.testi-card .author {
+  font-size: 0.76rem;
+}
+
+/* ==========================================================
+GALLERY
+========================================================== */
+
+.masonry {
+  column-count: 2;
+  column-gap: 8px;
+  margin-top: 28px;
+}
+
+.gallery-item {
+  margin-bottom: 8px;
+  border-radius: 9px;
+  break-inside: avoid;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-item figcaption {
+  opacity: 1;
+  padding: 10px;
+  background: linear-gradient(
+  180deg,
+  transparent 45%,
+  rgba(20, 24, 29, 0.9) 100%
+  );
+}
+
+.gi-review {
+  font-size: 0.68rem;
+}
+
+/* ==========================================================
+LIGHTBOX
+========================================================== */
+
+.lightbox {
+  padding: 10px;
+}
+
+.lightbox img {
+  max-width: 94vw;
+  max-height: 78vh;
+  object-fit: contain;
+}
+
+.lightbox-nav {
+  width: 38px;
+  height: 38px;
+  font-size: 1.25rem;
+}
+
+.lightbox-prev {
+  left: 7px;
+}
+
+.lightbox-next {
+  right: 7px;
+}
+
+.lightbox-close {
+  top: 12px;
+  right: 12px;
+  font-size: 1.5rem;
+}
+
+/* ==========================================================
+MALAYALAM
+========================================================== */
+
+.mal-text {
+  font-size: clamp(1.15rem, 5vw, 1.5rem);
+  line-height: 1.5;
+}
+
+.mal-sub {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.mal-text {
+    white-space: pre-line;
+}
+
+/* ==========================================================
+INSTAGRAM
+========================================================== */
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 26px;
+}
+
+.insta-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* ==========================================================
+FINAL CTA
+========================================================== */
+
+.final-cta {
+  padding: 70px 18px;
+  background-attachment: scroll;
+}
+
+.final-cta h2 {
+  font-size: clamp(1.9rem, 9vw, 2.5rem);
+  line-height: 1.05;
+}
+
+.final-cta p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.final-cta .hero-actions {
+  margin-top: 20px;
+}
+
+/* ==========================================================
+BUTTONS
+========================================================== */
+
+.btn {
+  min-height: 42px;
+  padding: 10px 18px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* ==========================================================
+FORMS / ENQUIRY
+========================================================== */
+
+.form-row {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.enquiry-form {
+  padding: 20px;
+}
+
+/* ==========================================================
+MODAL
+========================================================== */
+
+.modal-grid {
+  grid-template-columns: 1fr;
+}
+
+.modal-panel {
+  padding: 24px 18px;
+}
+
+/* ==========================================================
+WHATSAPP
+========================================================== */
+
+.whatsapp-fab {
+  width: 50px;
+  height: 50px;
+  right: 16px;
+  bottom: 16px;
+}
+}
+
 /* ============================================================
-   EXTRA SMALL PHONES
-   ============================================================ */
+EXTRA SMALL PHONES
+============================================================ */
 
 @media (max-width: 480px) {
 
@@ -2455,91 +2627,87 @@ h1, h2, h3 { font-family: var(--font-display); }
     padding-right: 16px;
   }
 
-  .section {
-    padding: 50px 0;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  .hero-content {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .hero-actions .btn,
-  .final-cta .hero-actions .btn {
-    width: 100%;
-    max-width: none;
-  }
-
-  .dest-grid {
-    gap: 8px;
-  }
-
-  .dest-card {
-    padding: 12px;
-  }
-
-  .dest-name {
-    font-size: 0.9rem;
-  }
-
-  .dest-card--lg .dest-name {
-    font-size: 1.2rem;
-  }
-
-  .exp-grid {
-    gap: 8px;
-  }
-
-  .exp-card {
-    padding: 18px 8px;
-  }
-
-  .stats-grid {
-    gap: 22px 6px;
-  }
-
-  .stat-num {
-    font-size: 1.8rem;
-  }
-
-  .masonry {
-    column-count: 2;
-    column-gap: 7px;
-  }
-
-  .gallery-item {
-    margin-bottom: 7px;
-  }
-
-  .insta-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px;
-  }
-
-  .lightbox-nav {
-    width: 34px;
-    height: 34px;
-  }
-
-  .lightbox-prev {
-    left: 5px;
-  }
-
-  .lightbox-next {
-    right: 5px;
-  }
+.section {
+  padding: 50px 0;
 }
 
+.section-title {
+  font-size: 1.8rem;
+}
 
+.hero-content {
+  padding-left: 16px;
+  padding-right: 16px;
+}
 
+.hero-actions .btn,
+.final-cta .hero-actions .btn {
+  width: 100%;
+  max-width: none;
+}
 
+.dest-grid {
+  gap: 8px;
+}
+
+.dest-card {
+  padding: 12px;
+}
+
+.dest-name {
+  font-size: 0.9rem;
+}
+
+.dest-card--lg .dest-name {
+  font-size: 1.2rem;
+}
+
+.exp-grid {
+  gap: 8px;
+}
+
+.exp-card {
+  padding: 18px 8px;
+}
+
+.stats-grid {
+  gap: 22px 6px;
+}
+
+.stat-num {
+  font-size: 1.8rem;
+}
+
+.masonry {
+  column-count: 2;
+  column-gap: 7px;
+}
+
+.gallery-item {
+  margin-bottom: 7px;
+}
+
+.insta-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.lightbox-nav {
+  width: 34px;
+  height: 34px;
+}
+
+.lightbox-prev {
+  left: 5px;
+}
+
+.lightbox-next {
+  right: 5px;
+}
+}
 
 /* =====================================================
-   ABOUT KAATHAM — CINEMATIC BELT
+ABOUT KAATHAM — CINEMATIC BELT
 ===================================================== */
 
 .about {
@@ -2566,10 +2734,10 @@ h1, h2, h3 { font-family: var(--font-display); }
   inset: 0;
 
   background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.82),
-    rgba(0, 0, 0, 0.60),
-    rgba(0, 0, 0, 0.40)
+  90deg,
+  rgba(0, 0, 0, 0.82),
+  rgba(0, 0, 0, 0.60),
+  rgba(0, 0, 0, 0.40)
   );
 }
 
@@ -2620,7 +2788,6 @@ h1, h2, h3 { font-family: var(--font-display); }
   color: #fff;
 }
 
-
 /* ---------- MOBILE ---------- */
 
 @media (max-width: 768px) {
@@ -2630,25 +2797,877 @@ h1, h2, h3 { font-family: var(--font-display); }
     background-position: center;
   }
 
-  .about-overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.72),
-      rgba(0, 0, 0, 0.85)
+.about-overlay {
+  background: linear-gradient(
+  180deg,
+  rgba(0, 0, 0, 0.72),
+  rgba(0, 0, 0, 0.85)
+  );
+}
+
+.about-content {
+  padding: 70px 22px;
+}
+
+.about-content .section-title {
+  font-size: clamp(32px, 9vw, 46px);
+  line-height: 1.08;
+}
+
+.about-text p {
+  font-size: 15px;
+  line-height: 1.75;
+}
+}
+
+/* ---------- Loading speed ---------- */
+.data-loading,
+.data-error,
+.data-empty {
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+}
+
+/* =========================================================
+   INSTAGRAM — KAATHAM
+========================================================= */
+
+.instagram {
+  position: relative;
+  overflow: hidden;
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+
+/* -------------------------
+   HEADER
+------------------------- */
+
+.instagram-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 45px;
+}
+
+
+.instagram-profile {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+
+.instagram-avatar {
+  width: 88px;
+  height: 88px;
+  flex: 0 0 88px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #feda75,
+      #fa7e1e,
+      #d62976,
+      #962fbf,
+      #4f5bd5
     );
+}
+
+
+.instagram-avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  padding: 17px;
+
+  background: #111;
+}
+
+
+.instagram-profile-info .eyebrow {
+  margin-bottom: 5px;
+}
+
+
+.instagram-profile-info .section-title {
+  margin-bottom: 8px;
+}
+
+
+.instagram-bio {
+  max-width: 500px;
+
+  margin: 0 0 15px;
+
+  font-size: 15px;
+  line-height: 1.6;
+
+  opacity: .72;
+}
+
+
+.instagram-stats {
+  display: flex;
+  gap: 25px;
+
+  font-size: 12px;
+
+  opacity: .65;
+}
+
+
+.instagram-stats span {
+  display: flex;
+  gap: 5px;
+}
+
+
+.instagram-stats strong {
+  font-weight: 600;
+  color: inherit;
+}
+
+
+/* -------------------------
+   FOLLOW BUTTON
+------------------------- */
+
+.instagram-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 13px 20px;
+
+  border-radius: 8px;
+
+  background: #111;
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+
+.instagram-follow-btn span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+
+.instagram-follow-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.15);
+}
+
+
+/* -------------------------
+   INSTAGRAM GRID
+------------------------- */
+
+.insta-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 8px;
+}
+
+
+.insta-tile {
+  position: relative;
+
+  display: block;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: #eee;
+
+  text-decoration: none;
+}
+
+
+.insta-tile img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform .6s cubic-bezier(.2,.7,.2,1),
+    filter .4s ease;
+}
+
+
+.insta-tile:hover img {
+  transform: scale(1.08);
+
+  filter: brightness(.72);
+}
+
+
+/* -------------------------
+   HOVER OVERLAY
+------------------------- */
+
+.insta-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  opacity: 0;
+
+  background: rgba(0,0,0,.25);
+
+  transition: opacity .3s ease;
+}
+
+
+.insta-overlay span:first-child {
+  font-size: 28px;
+  line-height: 1;
+}
+
+
+.insta-tile:hover .insta-overlay {
+  opacity: 1;
+}
+
+
+/* -------------------------
+   BOTTOM LINE
+------------------------- */
+
+.instagram-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 25px;
+
+  font-size: 13px;
+
+  opacity: .65;
+}
+
+
+.instagram-bottom a {
+  color: inherit;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: opacity .2s ease;
+}
+
+
+.instagram-bottom a:hover {
+  opacity: .55;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .instagram {
+    padding-top: 75px;
+    padding-bottom: 75px;
   }
 
-  .about-content {
-    padding: 70px 22px;
+
+  .instagram-header {
+    display: block;
+
+    margin-bottom: 28px;
   }
 
-  .about-content .section-title {
-    font-size: clamp(32px, 9vw, 46px);
-    line-height: 1.08;
+
+  .instagram-profile {
+    align-items: flex-start;
+
+    gap: 16px;
   }
 
-  .about-text p {
-    font-size: 15px;
-    line-height: 1.75;
+
+  .instagram-avatar {
+    width: 64px;
+    height: 64px;
+
+    flex-basis: 64px;
   }
+
+
+  .instagram-avatar img {
+    padding: 12px;
+  }
+
+
+  .instagram-profile-info .section-title {
+    font-size: 28px;
+  }
+
+
+  .instagram-bio {
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+  }
+
+
+  .instagram-stats {
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    font-size: 11px;
+  }
+
+
+  .instagram-follow-btn {
+    margin-top: 22px;
+
+    width: 100%;
+  }
+
+
+  .insta-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 5px;
+  }
+
+
+  .insta-overlay {
+    display: none;
+  }
+
+
+  .instagram-bottom {
+    display: block;
+
+    text-align: center;
+
+    line-height: 1.8;
+  }
+
+
+  .instagram-bottom a {
+    display: block;
+
+    margin-top: 4px;
+  }
+
+}
+
+
+/* ==========================================================
+   COLLEGE TRIPS — KAATHAM
+========================================================== */
+
+.college-trips {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ---------- HEADING ---------- */
+
+.college-trips-heading {
+    max-width: 720px;
+    margin-bottom: 45px;
+}
+
+
+/* ---------- GRID ---------- */
+
+.college-trips-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* ---------- CARD ---------- */
+
+.college-trip-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    border:
+        1px solid
+        rgba(0, 0, 0, 0.08);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.college-trip-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+/* ---------- IMAGE ---------- */
+
+.college-trip-image {
+
+    position: relative;
+
+    height: 280px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    overflow: hidden;
+}
+
+
+.college-trip-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.05) 65%
+        );
+}
+
+
+/* ---------- BADGE ---------- */
+
+.college-trip-badge {
+
+    position: absolute;
+
+    top: 16px;
+    left: 16px;
+
+    z-index: 3;
+
+    padding:
+        7px 11px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    color:
+        #111;
+
+    font-size:
+        0.65rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.08em;
+}
+
+
+/* ---------- IMAGE DESTINATION ---------- */
+
+.college-trip-image-content {
+
+    position: absolute;
+
+    left: 20px;
+    right: 20px;
+    bottom: 18px;
+
+    z-index: 3;
+
+    color: white;
+
+    font-size:
+        0.85rem;
+
+    font-weight:
+        600;
+}
+
+
+/* ---------- BODY ---------- */
+
+.college-trip-body {
+
+    padding:
+        22px 22px 24px;
+}
+
+
+.college-trip-meta {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap: 12px;
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.78rem;
+}
+
+
+.college-trip-meta strong {
+
+    color:
+        var(--text);
+
+    font-size:
+        0.82rem;
+}
+
+
+/* ---------- TITLE ---------- */
+
+.college-trip-body h3 {
+
+    margin:
+        0 0 10px;
+
+    font-size:
+        1.35rem;
+
+    line-height:
+        1.25;
+}
+
+
+/* ---------- DESCRIPTION ---------- */
+
+.college-trip-body p {
+
+    margin:
+        0 0 20px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.88rem;
+
+    line-height:
+        1.65;
+}
+
+
+/* ---------- LINK ---------- */
+
+.college-trip-link {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    font-size:
+        0.82rem;
+
+    font-weight:
+        700;
+
+    text-decoration:
+        none;
+}
+
+
+.college-trip-link span {
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.college-trip-link:hover span {
+
+    transform:
+        translateX(5px);
+}
+
+
+/* ==========================================================
+   CUSTOM CTA
+========================================================== */
+
+.college-trip-cta {
+
+    margin-top:
+        55px;
+
+    padding:
+        30px 34px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    border-radius:
+        24px;
+
+    background:
+        var(--surface-2);
+
+    border:
+        1px solid
+        rgba(0, 0, 0, 0.07);
+}
+
+
+.college-cta-eyebrow {
+
+    margin:
+        0 0 7px;
+
+    font-size:
+        0.68rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.12em;
+}
+
+
+.college-trip-cta h3 {
+
+    margin:
+        0 0 7px;
+
+    font-size:
+        1.45rem;
+}
+
+
+.college-trip-cta p {
+
+    margin:
+        0;
+
+    max-width:
+        600px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.88rem;
+
+    line-height:
+        1.6;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .college-trips-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .college-trips-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            18px;
+    }
+
+
+    .college-trip-image {
+
+        height:
+            250px;
+    }
+
+
+    .college-trip-cta {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        padding:
+            24px;
+    }
+
+
+    .college-trip-cta .btn {
+
+        width:
+            100%;
+
+        justify-content:
+            center;
+    }
+
+}
+
+/* =========================================================
+   COLLEGE TRIPS — WHITE SEPARATED SECTION
+========================================================= */
+
+.college-trips {
+    position: relative;
+    background: #ffffff;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+/* Premium separation belt */
+.college-trips::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--accent);
+}
+
+.college-trips .container {
+    position: relative;
+    z-index: 2;
+}
+
+.college-trips-heading {
+    position: relative;
+    z-index: 2;
+}
+
+.college-trips .eyebrow {
+    color: var(--accent);
+}
+
+.college-trips .section-title {
+    margin-bottom: 14px;
+}
+
+.college-trips .section-lead {
+    max-width: 680px;
+}
+
+
+@media (max-width: 768px) {
+
+    .college-trips {
+        padding: 70px 0;
+    }
+
 }
