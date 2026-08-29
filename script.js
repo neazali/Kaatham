@@ -17,7 +17,7 @@ const supabaseClient = window.supabase.createClient(
    SITE CONFIG
    ============================================================ */
 
-const KAATHAM_WHATSAPP_NUMBER = '918943498591';
+const KAATHAM_WHATSAPP_NUMBER = '917838708591';
 
 
 /* ============================================================

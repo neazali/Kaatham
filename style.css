@@ -3561,16 +3561,15 @@ ABOUT KAATHAM — CINEMATIC BELT
 }
 
 
-/* ==========================================================
-   MOBILE
-========================================================== */
+/* =========================================================
+   COLLEGE TRIPS — MOBILE
+========================================================= */
 
 @media (max-width: 900px) {
 
     .college-trips-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
     }
 
 }
@@ -3578,47 +3577,176 @@ ABOUT KAATHAM — CINEMATIC BELT
 
 @media (max-width: 600px) {
 
-    .college-trips-grid {
+    /* ---------- SECTION ---------- */
 
-        grid-template-columns:
-            1fr;
-
-        gap:
-            18px;
+    .college-trips {
+        padding: 50px 0;
     }
 
+
+    /* ---------- HEADING ---------- */
+
+    .college-trips-heading {
+        margin-bottom: 28px;
+        max-width: 100%;
+    }
+
+    .college-trips .section-title {
+        font-size: 29px;
+        line-height: 1.15;
+        margin-bottom: 10px;
+    }
+
+    .college-trips .section-lead {
+        font-size: 0.88rem;
+        line-height: 1.55;
+    }
+
+
+    /* ---------- GRID ---------- */
+
+    .college-trips-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+
+    /* ---------- CARD ---------- */
+
+    .college-trip-card {
+        border-radius: 16px;
+        box-shadow:
+            0 8px 25px
+            rgba(0, 0, 0, 0.07);
+    }
+
+    .college-trip-card:hover {
+        transform: none;
+        box-shadow:
+            0 8px 25px
+            rgba(0, 0, 0, 0.07);
+    }
+
+
+    /* ---------- IMAGE ---------- */
 
     .college-trip-image {
-
-        height:
-            250px;
+        height: 185px;
     }
 
 
+    /* ---------- BADGE ---------- */
+
+    .college-trip-badge {
+        top: 12px;
+        left: 12px;
+
+        padding: 6px 9px;
+
+        font-size: 0.58rem;
+    }
+
+
+    /* ---------- IMAGE TEXT ---------- */
+
+    .college-trip-image-content {
+        left: 14px;
+        right: 14px;
+        bottom: 13px;
+
+        font-size: 0.76rem;
+    }
+
+
+    /* ---------- BODY ---------- */
+
+    .college-trip-body {
+        padding: 16px 17px 18px;
+    }
+
+
+    /* ---------- META ---------- */
+
+    .college-trip-meta {
+        margin-bottom: 7px;
+        gap: 8px;
+        font-size: 0.70rem;
+    }
+
+    .college-trip-meta strong {
+        font-size: 0.74rem;
+    }
+
+
+    /* ---------- TITLE ---------- */
+
+    .college-trip-body h3 {
+        margin-bottom: 7px;
+
+        font-size: 1.12rem;
+        line-height: 1.25;
+    }
+
+
+    /* ---------- DESCRIPTION ---------- */
+
+    .college-trip-body p {
+        margin-bottom: 13px;
+
+        font-size: 0.78rem;
+        line-height: 1.5;
+    }
+
+
+    /* ---------- LINK ---------- */
+
+    .college-trip-link {
+        font-size: 0.74rem;
+        gap: 6px;
+    }
+
+
+    /* ---------- CTA ---------- */
+
     .college-trip-cta {
+        margin-top: 30px;
 
-        flex-direction:
-            column;
+        padding: 20px;
 
-        align-items:
-            flex-start;
+        flex-direction: column;
+        align-items: flex-start;
 
-        padding:
-            24px;
+        gap: 16px;
+
+        border-radius: 17px;
+    }
+
+
+    .college-cta-eyebrow {
+        margin-bottom: 5px;
+        font-size: 0.60rem;
+    }
+
+
+    .college-trip-cta h3 {
+        margin-bottom: 6px;
+        font-size: 1.18rem;
+        line-height: 1.25;
+    }
+
+
+    .college-trip-cta p {
+        font-size: 0.78rem;
+        line-height: 1.5;
     }
 
 
     .college-trip-cta .btn {
-
-        width:
-            100%;
-
-        justify-content:
-            center;
+        width: 100%;
+        justify-content: center;
     }
 
 }
-
 /* =========================================================
    COLLEGE TRIPS — WHITE SEPARATED SECTION
 ========================================================= */
@@ -3823,19 +3951,178 @@ ABOUT KAATHAM — CINEMATIC BELT
 
 
     /* =====================================================
-       TREKS
-    ===================================================== */
+   KAATHAM — TREKS MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    /* ---------- TREK HERO ---------- */
+
+    .trek-hero {
+        min-height: 68vh;
+        height: auto;
+    }
+
+    .trek-hero-content {
+        width: 100%;
+        padding: 60px 18px 45px;
+        margin-top: 20px;
+    }
+
+    .trek-hero .eyebrow {
+        font-size: 0.68rem;
+        letter-spacing: 0.16em;
+    }
+
+    .trek-hero .section-title {
+        font-size: clamp(2.8rem, 14vw, 4rem);
+        line-height: 0.95;
+    }
+
+    .trek-hero .section-lead {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        max-width: 32ch;
+        margin-top: 16px;
+    }
+
+
+    /* ---------- TREK SECTION ---------- */
+
+    #treks {
+        padding-top: 85px;
+        padding-bottom: 65px;
+    }
+
+    #treks .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    #treks .section-title {
+        font-size: clamp(1.9rem, 8vw, 2.4rem);
+    }
+
+    #treks .section-lead {
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+
+    /* ---------- TREK CARDS ---------- */
 
     #treksGrid {
         grid-template-columns: 1fr !important;
-        gap: 12px !important;
+        gap: 14px !important;
+        margin-top: 28px;
     }
 
     #treksGrid .dest-card,
     #treksGrid .dest-card--lg {
-        min-height: 190px !important;
-        height: 190px !important;
+        min-height: 175px !important;
+        height: 175px !important;
+
+        aspect-ratio: auto;
+
+        padding: 18px;
+
+        border-radius: 18px;
     }
+
+    #treksGrid .dest-name {
+        font-size: 1.25rem;
+    }
+
+    #treksGrid .dest-card--lg .dest-name {
+        font-size: 1.45rem;
+    }
+
+    #treksGrid .dest-tag {
+        font-size: 0.68rem;
+        margin-top: 3px;
+    }
+
+
+    /* ---------- TREK MOUNTAINS ---------- */
+
+    .kaatham-mountain {
+        height: 38%;
+    }
+
+    .mountain-near {
+        height: 32%;
+    }
+
+    .kaatham-ridge {
+        bottom: 7%;
+        height: 20%;
+    }
+
+
+    /* ---------- TREK MIST ---------- */
+
+    .kaatham-mist {
+        width: 90%;
+        height: 90px;
+    }
+
+    .mist-a {
+        top: 28%;
+    }
+
+    .mist-b {
+        top: 48%;
+    }
+
+
+    /* ---------- HIKER ---------- */
+
+    .kaatham-hiker {
+        width: 38px;
+        height: 82px;
+        bottom: 16%;
+    }
+
+    .hiker-head {
+        width: 10px;
+        height: 10px;
+        left: 15px;
+    }
+
+    .hiker-body {
+        width: 13px;
+        height: 27px;
+        left: 13px;
+    }
+
+    .hiker-backpack {
+        width: 12px;
+        height: 21px;
+        left: 6px;
+    }
+
+    .hiker-arm {
+        width: 5px;
+        height: 25px;
+        left: 12px;
+    }
+
+    .hiker-leg {
+        width: 5px;
+        height: 35px;
+        left: 15px;
+    }
+
+    .hiker-leg-two {
+        left: 21px;
+    }
+
+    .hiker-stick {
+        height: 52px;
+        left: 26px;
+    }
+
+}
 
 
     /* =====================================================
